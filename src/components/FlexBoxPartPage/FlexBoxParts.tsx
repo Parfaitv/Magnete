@@ -3,7 +3,7 @@ import { TFlexBoxPartItem } from "./types"
 import { FlexBoxPartItem } from "./FlexBoxPartItem"
 import { TextManrope } from "../TextManrope"
 
-export const FlexBoxParts = ({ isMobile, title, items }: { isMobile: boolean, title: string, items: TFlexBoxPartItem[] }) => {
+export const FlexBoxParts = ({ isMobile, title, items }: { isMobile: boolean, title?: string, items: TFlexBoxPartItem[] }) => {
     return (
         <FlexBox flexDirection='column'>
             <TextManrope fontSize={32} fontWeight='100'>

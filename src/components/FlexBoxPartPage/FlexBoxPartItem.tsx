@@ -7,7 +7,6 @@ export const FlexBoxPartItem = ({ img, name, price }: TFlexBoxPartItem) => {
         <FlexBox flexWrap='nowrap' flexDirection='column' gap='6px'>
             <FlexBox flex={1}>
                 <img width='100%' src={img} />
-                {/* <div style={{ backgroundImage: `url(${img})`, position: 'relative', backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat' }} /> */}
             </FlexBox>
             <FlexBox flexDirection='column' justifyContent='center' alignItems='center'>
                 <TextManrope fontSize={18} fontWeight='bold'>{name}</TextManrope>

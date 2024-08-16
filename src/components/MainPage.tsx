@@ -1,14 +1,13 @@
 import { Box } from "@mui/material"
 import { Header } from "./Header";
 import mainPage from '@/picture/mainPage.png'
-import clasicPicture from '@/picture/Clasic.png'
 import { FlexBox } from "./FlexBox";
 import { useState } from "react";
 import { FlexBoxParts } from "./FlexBoxPartPage";
-import { mockFLexBoxPartItems } from "./constants";
-import { TextManrope } from "./TextManrope";
-import { Image } from "./Image";
-
+import { mockGridBoxPartItems, mockFLexBoxPartItems } from "./constants";
+import { GridBoxPartPage } from "./GridBoxPartPage";
+import { MessageBox } from "./MessageBox";
+import { Footer } from "./Footer";
 
 export const MainPage = () => {
 	const [isMobile, setIsMobile] = useState(false);
@@ -22,20 +21,23 @@ export const MainPage = () => {
 			<FlexBox padding='48px 10px 0 10px' height='90vh'>
 				<FlexBoxParts isMobile={isMobile} title="Новая коллекция" items={mockFLexBoxPartItems} />
 			</FlexBox>
-			<div style={{ display: 'flex', width: '100vw', height: '50vh', flexDirection: 'column', padding: '48px 10px 0 10px' }}>
-				<Box>
-					<TextManrope fontSize={24} paddingLeft='10px'>Каталог/женский</TextManrope>
-				</Box>
-				<div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gridGap: '8px' }}>
-					<Image src={clasicPicture} alt="1" style={{ gridRow: '1/3', gridColumn: '1/3' }} />
-					<div style={{ display: 'grid', gridTemplateColumns: '1fr', gridGap: '8px' }}>
-						<Image src={mainPage} alt="2" />
-						<Image src={mainPage} alt="3" />
-					</div>
-					<Image src={clasicPicture} alt="4" style={{ gridRow: '2/4' }} />
-					<Image src={mainPage} alt="5" style={{ gridColumn: '1/3' }} />
-				</div>
-			</div>
+			<GridBoxPartPage items={mockGridBoxPartItems} title="Каталог/Женская одежда" />
+			<FlexBox padding='48px 10px 0 10px' height='90vh'>
+				<FlexBoxParts isMobile={isMobile} items={mockFLexBoxPartItems} />
+			</FlexBox>
+			<FlexBox paddingTop='48px' width='100%'>
+				<MessageBox title="Нужна консультация? Напишите стилисту бренда ВИКТОРИИ СИТНИК" telegramUrl="https://web.telegram.org/k/" instagramUrl="https://instagram.com" />
+			</FlexBox>
+			<FlexBox width='100%'>
+				<MessageBox title="Чтобы сделать заказ, напишите нам в социальных сетях!" telegramUrl="https://web.telegram.org/k/" instagramUrl="https://instagram.com" />
+			</FlexBox>
+			<Footer
+				usefulLinks={[{ navPath: '/catalog', text: 'Каталог' }, { navPath: '/brand', text: 'О бренде' }, { navPath: '/delivery', text: 'Доставка' }, { navPath: '/services', text: 'Услуги стилиста' }, { navPath: '/contacts', text: 'Контакты' }]}
+				categories={{
+					manCatalog: [{ navPath: '/catalog/man/base', text: 'База' }, { navPath: '/catalog/man/clasic', text: 'Классика' }, { navPath: '/catalog/man/sport', text: 'Спорт' }],
+					womanCatalog: [{ navPath: '/catalog/woman/base', text: 'База' }, { navPath: '/catalog/woman/clasic', text: 'Классика' }, { navPath: '/catalog/woman/sport', text: 'Спорт' }, { navPath: '/catalog/woman/knitted', text: 'Трикотаж' }, { navPath: '/catalog/woman/black-magnete', text: 'Black Magnete' }]
+				}}
+			/>
 		</Box>
 	)
 }

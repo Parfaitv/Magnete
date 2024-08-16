@@ -36,7 +36,7 @@ export const Header = ({ setIsMobile, isMobile }: { setIsMobile(): void, isMobil
         setOpenSnackBar(false);
     };
 
-    const scroll = scrollY > 20
+    const scroll = scrollY > 80
 
     return (
         <Box sx={{ background: scroll ? 'rgb(245 245 245 / 30%)' : 'transparent', backdropFilter: scroll ? 'blur(6px)' : undefined, transition: '1s ease-in-out' }} position='fixed' top={0} width='100%'>

@@ -1,5 +1,6 @@
 import { TFlexBoxPartItem } from "./FlexBoxPartPage/types";
 import mainPage from '@/picture/mainPage.png'
+import clasicPicture from '@/picture/Clasic.png'
 
 export const mockFLexBoxPartItems: TFlexBoxPartItem[] = [
     {
@@ -17,4 +18,11 @@ export const mockFLexBoxPartItems: TFlexBoxPartItem[] = [
         name: "Название 3",
         price: '3999'
     }
+]
+export const mockGridBoxPartItems = [
+    { url: clasicPicture, navPath: 'path' },
+    { url: mainPage, navPath: 'path' },
+    { url: mainPage, navPath: 'path' },
+    { url: clasicPicture, navPath: 'path' },
+    { url: mainPage, navPath: 'path' }
 ]
