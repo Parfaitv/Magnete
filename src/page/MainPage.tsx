@@ -1,29 +1,13 @@
-import { Box } from "@mui/material"
-import { Header } from "./Header";
-import mainPage from '@/picture/mainPage.png'
-import { FlexBox } from "./FlexBox";
-import { useState } from "react";
-import { FlexBoxParts } from "./FlexBoxPartPage";
-import { mockGridBoxPartItems, mockFLexBoxPartItems } from "./constants";
-import { GridBoxPartPage } from "./GridBoxPartPage";
-import { MessageBox } from "./MessageBox";
-import { Footer } from "./Footer";
-import { Image } from "./Image";
+import { Header, Footer, FlexBox, MessageBox } from '@/components'
+import { Box } from '@mui/material'
+import { Outlet } from 'react-router'
 
 export const MainPage = () => {
-	const [isMobile, setIsMobile] = useState(false);
 
 	return (
-		<Box display='grid' gridTemplateRows='repeat(4, 1fr)' gap='3rem'>
-			<Header isMobile={isMobile} setIsMobile={() => setIsMobile((prev) => !prev)} />
-			<Image alt="Основная картинка" src={mainPage} />
-			<FlexBoxParts
-				isMobile={isMobile}
-				header={{ title: 'Новая коллекция', navPath: '/catalog/new-collection' }}
-				items={mockFLexBoxPartItems}
-			/>
-			<GridBoxPartPage items={mockGridBoxPartItems} header={{ title: "Каталог/Женская одежда", navPath: '/catalog/woman' }} />
-			<FlexBoxParts isMobile={isMobile} header={{ title: 'Мужская коллекция', navPath: '/catalog/man' }} items={mockFLexBoxPartItems} />
+		<Box display='grid' gap='1em'>
+			<Header />
+			<Outlet />
 			<FlexBox flexDirection='column'>
 				<MessageBox title="Нужна консультация? Напишите стилисту бренда ВИКТОРИИ СИТНИК" telegramUrl="https://web.telegram.org/k/" instagramUrl="https://instagram.com" />
 				<MessageBox title="Чтобы сделать заказ, напишите нам в социальных сетях!" telegramUrl="https://web.telegram.org/k/" instagramUrl="https://instagram.com" />

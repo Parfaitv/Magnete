@@ -1,7 +1,7 @@
 import styled, { css } from "styled-components"
-import { icons } from "../icon"
 import { TIconProps } from "@/types"
 import { CSSProperties } from "react"
+import { icons } from "@/icon"
 
 type TIcon = {
     icon: keyof typeof icons

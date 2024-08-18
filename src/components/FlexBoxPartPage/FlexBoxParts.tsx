@@ -5,7 +5,6 @@ import { TextManrope } from "../TextManrope"
 import { Link } from "react-router-dom"
 
 type FlexBoxPartsProps = {
-    isMobile: boolean
     header?: {
         title: string
         navPath: string
@@ -13,7 +12,7 @@ type FlexBoxPartsProps = {
     items: TFlexBoxPartItem[]
 }
 
-export const FlexBoxParts = ({ isMobile, header, items }: FlexBoxPartsProps) => {
+export const FlexBoxParts = ({ header, items }: FlexBoxPartsProps) => {
     return (
         <FlexBox flexDirection='column' gap='1rem'>
             {header &&
@@ -21,7 +20,7 @@ export const FlexBoxParts = ({ isMobile, header, items }: FlexBoxPartsProps) => 
                     {header.title}
                 </TextManrope>
             }
-            <FlexBox flexDirection={isMobile ? 'column' : 'row'} gap='12px' justifyContent='space-between' width='100%'>
+            <FlexBox flexDirection='row' gap='12px' justifyContent='space-between' width='100%' height='100%'>
                 {items.map(({ img, name, price, navPath }, i) => (
                     <FlexBoxPartItem key={`${img}_${i}_${name}-${price}`} img={img} name={name} price={price} navPath={navPath} />
                 ))}

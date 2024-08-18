@@ -1,4 +1,4 @@
-import { TFlexBoxPartItem } from "./FlexBoxPartPage/types";
+import { TFlexBoxPartItem } from "@/components/FlexBoxPartPage/types";
 import mainPage from '@/picture/mainPage.png'
 import clasicPicture from '@/picture/Clasic.png'
 

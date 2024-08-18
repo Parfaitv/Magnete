@@ -1,9 +1,9 @@
 import { Box, Snackbar, Typography } from "@mui/material"
-import { copyTextToClipboard } from "../utils";
+import { copyTextToClipboard } from "../../utils";
 import { SyntheticEvent, useEffect, useState } from "react";
-import { Icon } from "./Icon";
+import { Icon } from "../Icon";
 
-export const Header = ({ setIsMobile, isMobile }: { setIsMobile(): void, isMobile: boolean }) => {
+export const Header = () => {
     const [openSnackBar, setOpenSnackBar] = useState(false);
     const [scrollY, setScrollY] = useState(0);
 
@@ -44,20 +44,17 @@ export const Header = ({ setIsMobile, isMobile }: { setIsMobile(): void, isMobil
                 <Box display='flex' justifyContent='center' alignItems='center' padding='10px 0' gap='8px'>
                     <Icon icon="storeLogo" />
                     <Icon icon="storeName" />
-                    <Icon icon="storeLogo" onClick={setIsMobile} />
                 </Box>
-                {!isMobile &&
-                    <Box display='flex' flexDirection='column' justifyContent='end' alignItems='end'>
-                        <Typography onClick={handleClick} sx={{ cursor: 'pointer' }} fontWeight='600' variant="body1">8 (812) xxx-xx-xx</Typography>
-                        <Snackbar
-                            open={openSnackBar}
-                            autoHideDuration={2000}
-                            onClose={handleClose}
-                            message="Номер телефона успешно скопирован!"
-                        />
-                        <Typography variant="body1">Бесплатная доставка по всей России</Typography>
-                    </Box>
-                }
+                <Box display='flex' flexDirection='column' justifyContent='end' alignItems='end'>
+                    <Typography onClick={handleClick} sx={{ cursor: 'pointer' }} fontWeight='600' variant="body1">8 (812) xxx-xx-xx</Typography>
+                    <Snackbar
+                        open={openSnackBar}
+                        autoHideDuration={2000}
+                        onClose={handleClose}
+                        message="Номер телефона успешно скопирован!"
+                    />
+                    <Typography variant="body1">Бесплатная доставка по всей России</Typography>
+                </Box>
             </Box>
         </Box >
     )
