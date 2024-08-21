@@ -1,9 +1,10 @@
-import { GridBox, FlexBoxParts, TextManrope, FlexBox } from "@/components"
-import mainPage from '@/picture/mainPage.png'
+import { GridBox, TextManrope, FlexBox } from "@/components"
+import { AdvertisingBlock } from "@/components/AdvertisingBlock"
+import { mockAdvertisingBlock } from "@/constants"
 
 export const AboutPage = () => {
     return (
-        <GridBox paddingTop='90px' gridTemplateRows='repeat(3, 1fr)' gap='1rem' height='100vh'>
+        <GridBox paddingTop='4rem' gridTemplateRows='15em 1fr' gap='1rem'>
             <FlexBox justifyContent='start' width='100%' flexDirection='column' gap='1em'>
                 <TextManrope fontSize={34} fontWeight='600'>
                     О бренде
@@ -12,9 +13,7 @@ export const AboutPage = () => {
                     Описание бренда, описание бренда, описание бренда, описание бренда, описание бренда, описание бренда, описание бренда, описание бренда, описание бренда, описание бренда, описание бренда, описание бренда, описание бренда, описание бренда, описание бренда, описание бренда, описание бренда, описание бренда, описание бренда, описание бренда, описание бренда, описание бренда, описание бренда, описание бренда, описание бренда
                 </TextManrope>
             </FlexBox>
-            <GridBox gridRow='2/4'>
-                <FlexBoxParts items={[{ img: mainPage, navPath: '/catalog/new-collection/1' }, { img: mainPage, navPath: '/catalog/new-collection/2' }, { img: mainPage, navPath: '/catalog/new-collection/3' }]} />
-            </GridBox>
+            <AdvertisingBlock items={mockAdvertisingBlock} />
         </GridBox>
     )
 }

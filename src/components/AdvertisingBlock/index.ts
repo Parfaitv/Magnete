@@ -1,0 +1,1 @@
+export { AdvertisingBlock } from './AdvertisingBlock'

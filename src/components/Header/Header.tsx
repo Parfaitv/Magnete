@@ -36,11 +36,11 @@ export const Header = () => {
         setOpenSnackBar(false);
     };
 
-    const scroll = scrollY > 80
+    const scroll = scrollY > 24
 
     return (
-        <Box sx={{ background: scroll ? 'rgb(245 245 245 / 30%)' : 'transparent', backdropFilter: scroll ? 'blur(6px)' : undefined, transition: '1s ease-in-out' }} position='fixed' top={0} width='100%'>
-            <Box display='flex' justifyContent='space-between' alignItems='center' padding='0 10px'>
+        <Box sx={{ background: scroll ? 'rgb(245 245 245 / 30%)' : 'transparent', backdropFilter: scroll ? 'blur(6px)' : undefined, transition: '1s ease-in-out' }} display='flex' position='fixed' top={0} height='4rem' width='100%'>
+            <Box display='flex' width='100%' justifyContent='space-between' alignItems='center' padding='0 10px'>
                 <Box display='flex' justifyContent='center' alignItems='center' padding='10px 0' gap='8px'>
                     <Icon icon="storeLogo" />
                     <Icon icon="storeName" />

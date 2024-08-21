@@ -1,11 +1,10 @@
 import { Header, Footer, FlexBox, MessageBox } from '@/components'
-import { Box } from '@mui/material'
 import { Outlet } from 'react-router'
 
 export const MainPage = () => {
 
 	return (
-		<Box display='grid' gap='1em'>
+		<FlexBox flexDirection='column' gap='1em'>
 			<Header />
 			<Outlet />
 			<FlexBox flexDirection='column'>
@@ -19,6 +18,6 @@ export const MainPage = () => {
 					}}
 				/>
 			</FlexBox>
-		</Box>
+		</FlexBox>
 	)
 }
