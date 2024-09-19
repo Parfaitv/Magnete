@@ -3,7 +3,7 @@ import { FlexBox } from "../FlexBox"
 import { TextManrope } from "../TextManrope"
 import { Icon } from "../Icon"
 import { Snackbar } from "@mui/material"
-import { copyTextToClipboard } from "@/utils"
+import { copyTextToClipboard, useCSSMedia } from "@/utils"
 import { SyntheticEvent, useState } from "react"
 
 type ItemFooter = {
@@ -21,7 +21,7 @@ type FooterProps = {
 
 export const Footer = ({ usefulLinks, categories: { manCatalog, womanCatalog } }: FooterProps) => {
     const [openSnackBar, setOpenSnackBar] = useState(false);
-
+    const isMobile = useCSSMedia()
     const handleClick = () => {
         copyTextToClipboard('8-812-123-12-12')
         setOpenSnackBar(true)
@@ -37,8 +37,8 @@ export const Footer = ({ usefulLinks, categories: { manCatalog, womanCatalog } }
     };
 
     return (
-        <FlexBox width='100%' boxSizing='border-box' padding='4rem 1rem 2rem 1rem' justifyContent='space-between' alignItems='start'>
-            <FlexBox gap='5rem'>
+        <FlexBox width='100%' boxSizing='border-box' padding='4rem 1rem 2rem 1rem' flexDirection={isMobile ? 'column' : 'row'} gap={isMobile ? '1rem' : undefined} justifyContent='space-between' alignItems='start'>
+            <FlexBox gap={isMobile ? '1rem' : '5rem'}>
                 <FlexBox flexDirection='column' justifyContent='space-between' alignItems='center' >
                     <FlexBox flexDirection='column'>
                         <TextManrope fontSize={24} fontWeight='600'>
@@ -50,10 +50,13 @@ export const Footer = ({ usefulLinks, categories: { manCatalog, womanCatalog } }
                             ))}
                         </FlexBox>
                     </FlexBox>
-                    <FlexBox gap='1rem'>
-                        <Icon icon="storeLogo" />
-                        <Icon icon="storeName" />
-                    </FlexBox>
+                    {
+                        !isMobile &&
+                        <FlexBox gap='1rem'>
+                            <Icon icon="storeLogo" />
+                            <Icon icon="storeName" />
+                        </FlexBox>
+                    }
                 </FlexBox>
                 <FlexBox flexDirection='column'>
                     <TextManrope fontSize={24} fontWeight='600'>Категории товаров</TextManrope>
@@ -71,36 +74,45 @@ export const Footer = ({ usefulLinks, categories: { manCatalog, womanCatalog } }
                     </FlexBox>
                 </FlexBox>
             </FlexBox>
-            <FlexBox flexDirection='column' width='18rem' gap='1rem'>
-                <FlexBox flexDirection='column'>
-                    <TextManrope fontSize={24} fontWeight='600'>
-                        Контактные данные
-                    </TextManrope>
-                    <TextManrope onClick={handleClick} sx={{ cursor: 'pointer' }} fontSize={24} fontWeight='400' variant="body1">8 (xxx) xxx-xx-xx</TextManrope>
-                    <Snackbar
-                        open={openSnackBar}
-                        autoHideDuration={2000}
-                        onClose={handleClose}
-                        message="Номер телефона успешно скопирован!"
-                    />
-                    <TextManrope fontWeight='400' fontSize={24} variant="body1">magnete.spb@mail.ru</TextManrope>
-                    <TextManrope variant="body1">бесплатная доставка по России</TextManrope>
+            <FlexBox flexDirection='column' justifyContent={isMobile ? 'start' : 'end'} alignItems={isMobile ? 'start' : 'center'} gap={isMobile ? '1rem' : undefined}>
+                <FlexBox flexDirection='column' width='18rem' gap='1rem'>
+                    <FlexBox flexDirection='column'>
+                        <TextManrope fontSize={24} fontWeight='600'>
+                            Контактные данные
+                        </TextManrope>
+                        <TextManrope onClick={handleClick} sx={{ cursor: 'pointer' }} fontSize={24} fontWeight='400' variant="body1">8 (xxx) xxx-xx-xx</TextManrope>
+                        <Snackbar
+                            open={openSnackBar}
+                            autoHideDuration={2000}
+                            onClose={handleClose}
+                            message="Номер телефона успешно скопирован!"
+                        />
+                        <TextManrope fontWeight='400' fontSize={24} variant="body1">magnete.spb@mail.ru</TextManrope>
+                        <TextManrope variant="body1">бесплатная доставка по России</TextManrope>
+                    </FlexBox>
+                    <FlexBox justifyContent='space-around'>
+                        <Link style={{ backgroundColor: 'black', padding: '1rem', border: '0px solid black', borderRadius: '50%' }} target="_blank" to={'https://web.telegram.org/k/'}>
+                            <Icon icon="telegram" />
+                        </Link>
+                        <Link style={{ backgroundColor: 'black', padding: '1rem', border: '0px solid black', borderRadius: '50%' }} target="_blank" to={'https://instagram.com'}>
+                            <Icon icon="instagram" />
+                        </Link>
+                        <Link style={{ backgroundColor: 'black', padding: '1rem', border: '0px solid black', borderRadius: '50%' }} target="_blank" to={'https://instagram.com'}>
+                            <Icon icon="instagram" />
+                        </Link>
+                    </FlexBox>
+                    <FlexBox gap='1rem' flexDirection='column'>
+                        <TextManrope>Информация для покупателей. Торговая марка Magnete. Одежда собственного производства.</TextManrope>
+                        <TextManrope>Все права защищены. © Magnete, 2022-2024</TextManrope>
+                    </FlexBox>
                 </FlexBox>
-                <FlexBox justifyContent='space-around'>
-                    <Link style={{ backgroundColor: 'black', padding: '1rem', border: '0px solid black', borderRadius: '50%' }} target="_blank" to={'https://web.telegram.org/k/'}>
-                        <Icon icon="telegram" />
-                    </Link>
-                    <Link style={{ backgroundColor: 'black', padding: '1rem', border: '0px solid black', borderRadius: '50%' }} target="_blank" to={'https://instagram.com'}>
-                        <Icon icon="instagram" />
-                    </Link>
-                    <Link style={{ backgroundColor: 'black', padding: '1rem', border: '0px solid black', borderRadius: '50%' }} target="_blank" to={'https://instagram.com'}>
-                        <Icon icon="instagram" />
-                    </Link>
-                </FlexBox>
-                <FlexBox gap='1rem' flexDirection='column'>
-                    <TextManrope>Информация для покупателей Торговая марка Magnete. Одежда собственного производства.</TextManrope>
-                    <TextManrope>Все права защищены. © Magnete, 2022-2024</TextManrope>
-                </FlexBox>
+                {
+                    isMobile &&
+                    <FlexBox gap='1rem'>
+                        <Icon icon="storeLogo" />
+                        <Icon icon="storeName" />
+                    </FlexBox>
+                }
             </FlexBox>
         </FlexBox >
     )

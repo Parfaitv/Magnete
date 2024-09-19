@@ -1,13 +1,14 @@
 import { Box, Snackbar, Typography } from "@mui/material"
-import { copyTextToClipboard } from "../../utils";
+import { copyTextToClipboard, useCSSMedia } from "../../utils";
 import { SyntheticEvent, useEffect, useState } from "react";
 import { Icon } from "../Icon";
 
 export const Header = () => {
     const [openSnackBar, setOpenSnackBar] = useState(false);
     const [scrollY, setScrollY] = useState(0);
+    const isMobile = useCSSMedia(525)
 
-    function logit() {
+    const logit = () => {
         setScrollY(window.pageYOffset);
     }
 
@@ -45,16 +46,18 @@ export const Header = () => {
                     <Icon icon="storeLogo" />
                     <Icon icon="storeName" />
                 </Box>
-                <Box display='flex' flexDirection='column' justifyContent='end' alignItems='end'>
-                    <Typography onClick={handleClick} sx={{ cursor: 'pointer' }} fontWeight='600' variant="body1">8 (812) xxx-xx-xx</Typography>
-                    <Snackbar
-                        open={openSnackBar}
-                        autoHideDuration={2000}
-                        onClose={handleClose}
-                        message="Номер телефона успешно скопирован!"
-                    />
-                    <Typography variant="body1">Бесплатная доставка по всей России</Typography>
-                </Box>
+                {
+                    !isMobile && <Box display='flex' flexDirection='column' justifyContent='end' alignItems='end'>
+                        <Typography onClick={handleClick} sx={{ cursor: 'pointer' }} fontWeight='600' variant="body1">8 (812) xxx-xx-xx</Typography>
+                        <Snackbar
+                            open={openSnackBar}
+                            autoHideDuration={2000}
+                            onClose={handleClose}
+                            message="Номер телефона успешно скопирован!"
+                        />
+                        <Typography variant="body1">Бесплатная доставка по всей России</Typography>
+                    </Box>
+                }
             </Box>
         </Box >
     )

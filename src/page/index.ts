@@ -1,3 +1,6 @@
-export { MainPage } from './MainPage'
 export { StartPage } from './StartPage'
 export { AboutPage } from './AboutPage'
+export { Catalog } from './Catalog'
+export { CatalogVariant } from './CatalogVariant'
+export { CatalogView } from './CatalogView'
+export { ProductCard } from './ProductCard'

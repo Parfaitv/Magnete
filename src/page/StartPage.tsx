@@ -5,7 +5,9 @@ import mainPage from '@/picture/mainPage.png'
 export const StartPage = () => {
     return (
         <GridBox gap='3rem'>
-            <Image alt="Основная картинка" src={mainPage} />
+            <FlexBox width='100%' height='100%'>
+                <Image alt="Основная картинка" src={mainPage} />
+            </FlexBox>
             <FlexBoxParts
                 header={{ title: 'Новая коллекция', navPath: '/catalog/new-collection' }}
                 items={mockCollection}

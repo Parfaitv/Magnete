@@ -18,7 +18,7 @@ type FlexBoxPartsProps = {
 export const FlexBoxParts = ({ header, items, height = '960px' }: FlexBoxPartsProps) => {
     const isMobile = useCSSMedia()
     return (
-        <FlexBox flexDirection='column' gap='1rem'>
+        <FlexBox height='100%' flexDirection='column' gap='1rem'>
             {header &&
                 <TextManrope as={Link} to={header.navPath} style={{ color: 'black', textDecoration: 'none', fontSize: 32, fontWeight: '100' }}>
                     {header.title}

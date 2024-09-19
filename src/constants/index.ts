@@ -6,6 +6,7 @@ import BlackMagnete from '@/picture/BlackMagnete.png'
 import Knitted from '@/picture/Knitted.png'
 import Sport from '@/picture/Sport.png'
 import Card from '@/picture/Card.png'
+import CardItem from '@/picture/CardItem.png'
 
 export const mockCollection: TFlexBoxPartItem[] = [
     {
@@ -54,7 +55,7 @@ export const mockWomanCatalog: TFlexBoxPartItem[] = [
         img: CatalogCard,
         name: "Название 1",
         price: '3999',
-        navPath: '/catalog/woman/clasic/1'
+        navPath: '/catalog/woman/clasic'
     },
     {
         img: CatalogCard,
@@ -69,6 +70,7 @@ export const mockWomanCatalog: TFlexBoxPartItem[] = [
         navPath: '/catalog/woman/clasic/3'
     }
 ]
+
 export const mockGridBoxPartItems = [
     { img: Clasic, navPath: '/catalog/woman/clasic' },
     { img: Sport, navPath: '/catalog/woman/sport' },
@@ -81,4 +83,136 @@ export const mockAdvertisingBlock = [
     { img: CatalogCard },
     { img: CatalogCard },
     { img: CatalogCard },
+]
+
+export const mockCatalog = [
+    {
+        title: 'Мужская коллекция',
+        navPath: '/catalog/man',
+        items: [
+            {
+                img: CatalogCard,
+                navPath: '/catalog/man/clasic'
+            },
+            {
+                img: CatalogCard,
+                navPath: '/catalog/man/base'
+            },
+            {
+                img: CatalogCard,
+                navPath: '/catalog/man/sport'
+            }
+        ],
+    },
+    {
+        title: 'Женская коллекция',
+        navPath: '/catalog/woman',
+        items: [
+            {
+                img: CatalogCard,
+                navPath: '/catalog/woman/clasic'
+            },
+            {
+                img: CatalogCard,
+                navPath: '/catalog/woman/base'
+            },
+            {
+                img: CatalogCard,
+                navPath: '/catalog/woman/black-magnete'
+            },
+            {
+                img: CatalogCard,
+                navPath: '/catalog/woman/knitted'
+            },
+            {
+                img: CatalogCard,
+                navPath: '/catalog/woman/sport'
+            }
+        ],
+    },
+    {
+        title: 'Новая коллекция',
+        navPath: '/catalog/new-collection',
+        items: [
+            {
+                img: CatalogCard,
+                navPath: '/catalog/new-collection/1'
+            },
+            {
+                img: CatalogCard,
+                navPath: '/catalog/woman/new-collection/2'
+            },
+            {
+                img: CatalogCard,
+                navPath: '/catalog/woman/new-collection/3'
+            },
+            {
+                img: CatalogCard,
+                navPath: '/catalog/woman/new-collection/4'
+            },
+            {
+                img: CatalogCard,
+                navPath: '/catalog/woman/new-collection/5'
+            },
+            {
+                img: CatalogCard,
+                navPath: '/catalog/woman/new-collection/6'
+            },
+        ],
+    },
+
+]
+
+export const mockCatalogVariant: TFlexBoxPartItem[] = [
+    {
+        img: CatalogCard,
+        navPath: '/catalog/man/clasic'
+    },
+    {
+        img: CatalogCard,
+        navPath: '/catalog/man/base'
+    },
+    {
+        img: CatalogCard,
+        navPath: '/catalog/man/sport'
+    }
+]
+type TProductCardItem = {
+    images: string[];
+    name: string;
+    description: string;
+    consist: string;
+    article: string
+    sizes: string[];
+    price: number
+}
+
+export const mockProductCards: TProductCardItem[] = [
+    {
+        images: [CardItem, CardItem, CardItem],
+        name: 'Name name name',
+        description: 'Описание товара, описание товара, описание товара, описание товара, описание товара, описание товара, описание товара, описание товара, описание товара, описание товара, описание товара, описание товара, описание товара, описание товара, описание товара.',
+        consist: 'consist, consist, consist, consist, consist, consist, consist, consist, consist, consist, consist.',
+        sizes: ['XXS', 'XS', 'S', 'M', 'L', 'Xl', 'XXL', 'XXXL'],
+        article: 'Артикул товара: xxxxxxxx',
+        price: 6000
+    },
+    {
+        images: [CardItem, CardItem, CardItem],
+        name: 'Name name name',
+        description: 'Описание товара, описание товара, описание товара, описание товара, описание товара, описание товара, описание товара, описание товара, описание товара, описание товара, описание товара, описание товара, описание товара, описание товара, описание товара.',
+        consist: 'consist, consist, consist, consist, consist, consist, consist, consist, consist, consist, consist.',
+        sizes: ['XXS', 'XS', 'S', 'M', 'L', 'Xl', 'XXL', 'XXXL'],
+        article: 'Артикул товара: xxxxxxxx',
+        price: 7000
+    },
+    {
+        images: [CardItem, CardItem, CardItem],
+        name: 'Name name name',
+        description: 'description, description, description, description, description, description, description, description, description, description, description, description, description, description, description, description.',
+        consist: 'consist, consist, consist, consist, consist, consist, consist, consist, consist, consist, consist.',
+        sizes: ['XXS', 'XS', 'S', 'M', 'L', 'Xl', 'XXL', 'XXXL'],
+        article: 'Артикул товара: xxxxxxxx',
+        price: 8000
+    },
 ]
