@@ -34,6 +34,23 @@ export type SecondaryPages = {
     advertisingBlock: string[]
 }
 
+export type ProductPageItem = {
+    id: string
+    images: string[]
+    name: string
+    description: string
+    consist: string
+    article: string
+    sizes: string[]
+    price: number
+}
+
+export type ProductPageProps = {
+    man: Record<ManView, ProductPageItem[]>
+    woman: Record<WomanView, ProductPageItem[]>
+    newCollection: ProductPageItem[]
+}
+
 export type StoreState = {
     startPage: {
         mainPage: string
@@ -45,6 +62,7 @@ export type StoreState = {
     catalogVariantPage: {
         man: CatalogSecondaryProps
         woman: CatalogSecondaryProps
+        newCollection: CatalogSecondaryProps
     }
     catalogViewPage: {
         man: ViewProps<ManView>
@@ -52,7 +70,7 @@ export type StoreState = {
     }
     deliveryPage: SecondaryPages
     aboutPage: SecondaryPages
-
+    productPage: ProductPageProps
 }
 
 export type TUseParams = {

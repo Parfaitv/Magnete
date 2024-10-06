@@ -1,15 +1,14 @@
 import { createSlice } from '@reduxjs/toolkit';
 import mainPage from '@/picture/mainPage.png'
-import { mockCatalog, mockCatalogManView, mockCatalogVariant, mockCatalogWomanView, mockCollection, mockGridBoxPartItems, mockManCatalog, mockWomanCatalogVariant } from '@/constants';
+import { mockCatalog, mockCatalogManView, mockCatalogVariant, mockCatalogWomanView, mockCollection, mockGridBoxPartItems, mockManCatalog, mockNewCollectionCatalogVariant, mockProductCards, mockWomanCatalogVariant } from '@/constants';
 import CatalogCard from '@/picture/CatalogCard.png'
 import { StoreState } from '@/types';
-
 
 const initialState: StoreState = {
     startPage: {
         mainPage,
         newCollection: {
-            header: { title: 'Новая коллекция', navPath: '/catalog/new-collection' },
+            header: { title: 'Новая коллекция', navPath: '/catalog/newCollection' },
             items: mockCollection,
         },
         womanCatalog: {
@@ -31,41 +30,45 @@ const initialState: StoreState = {
             items: mockWomanCatalogVariant,
             title: 'Женская коллекция'
         },
+        newCollection: {
+            items: mockNewCollectionCatalogVariant,
+            title: 'Новая коллекция'
+        },
     },
     catalogViewPage: {
         man: {
             clasic: {
-                items: mockCatalogManView,
+                items: mockCatalogManView.clasic,
                 title: 'Классика'
             },
             base: {
-                items: mockCatalogManView,
+                items: mockCatalogManView.base,
                 title: 'База'
             },
             sport: {
-                items: mockCatalogManView,
+                items: mockCatalogManView.sport,
                 title: 'Спорт'
             },
         },
         woman: {
             clasic: {
-                items: mockCatalogWomanView,
+                items: mockCatalogWomanView.clasic,
                 title: 'Классика'
             },
             base: {
-                items: mockCatalogWomanView,
+                items: mockCatalogWomanView.base,
                 title: 'База'
             },
             sport: {
-                items: mockCatalogWomanView,
+                items: mockCatalogWomanView.sport,
                 title: 'Спорт'
             },
             knitted: {
-                items: mockCatalogWomanView,
+                items: mockCatalogWomanView.knitted,
                 title: 'Трикотаж'
             },
             blackMagnete: {
-                items: mockCatalogWomanView,
+                items: mockCatalogWomanView.blackMagnete,
                 title: 'Black Magnete'
 
             }
@@ -81,6 +84,21 @@ const initialState: StoreState = {
         description: 'Описание бренда, описание бренда, описание бренда, описание бренда, описание бренда, описание бренда, описание бренда, описание бренда, описание бренда, описание бренда, описание бренда, описание бренда, описание бренда, описание бренда, описание бренда, описание бренда, описание бренда, описание бренда, описание бренда, описание бренда, описание бренда, описание бренда, описание бренда, описание бренда, описание бренда',
         title: 'О бренде'
     },
+    productPage: {
+        man: {
+            base: mockProductCards,
+            clasic: mockProductCards,
+            sport: mockProductCards
+        },
+        woman: {
+            base: mockProductCards,
+            clasic: mockProductCards,
+            sport: mockProductCards,
+            blackMagnete: mockProductCards,
+            knitted: mockProductCards
+        },
+        newCollection: mockProductCards
+    }
 };
 
 const storeSlice = createSlice({

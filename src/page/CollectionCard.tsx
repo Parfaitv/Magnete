@@ -1,29 +1,16 @@
 import { FlexBox, GridBox, Image, TextManrope } from "@/components"
 import { useAppSelector } from "@/store"
-import { ManView, ProductPageItem, TUseParams } from "@/types"
 import { useCSSMedia } from "@/utils"
-import { Button, CircularProgress } from "@mui/material"
-import { useEffect, useState } from "react"
-import { useParams } from "react-router"
+import { Button } from "@mui/material"
+import { Navigate, useParams } from "react-router"
 
-export const ProductCard = () => {
+export const CollectionCard = () => {
     const isMobile = useCSSMedia()
-    const { id, variant, view } = useParams<TUseParams>()
-    const [product, setProduct] = useState<ProductPageItem>()
-    const products = useAppSelector((state) => state.reducer.productPage)
-
-    useEffect(() => {
-        if (variant === 'woman' && view) {
-            const filterProduct = products.woman[view].find((item) => item.id === id)
-            setProduct(filterProduct)
-        } else {
-            const filterProduct = products.man[view as ManView].find((item) => item.id === id)
-            setProduct(filterProduct)
-        }
-    }, [variant, view, id])
+    const { id } = useParams()
+    const product = useAppSelector((state) => state.reducer.productPage.newCollection.find((item) => item.id === id))
 
     if (!product) {
-        return <CircularProgress size="lg" />
+        return <Navigate to='/404' />
     }
 
     return (

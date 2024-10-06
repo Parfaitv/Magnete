@@ -7,25 +7,26 @@ import Knitted from '@/picture/Knitted.png'
 import Sport from '@/picture/Sport.png'
 import Card from '@/picture/Card.png'
 import CardItem from '@/picture/CardItem.png'
+import { ManView, ProductPageItem, WomanView } from "@/types"
 
 export const mockCollection: TFlexBoxPartItem[] = [
     {
         img: Card,
         name: "Название 1",
         price: '3999',
-        navPath: '/catalog/new-collection/1'
+        navPath: '/catalog/newCollection/1'
     },
     {
         img: Card,
         name: "Название 2",
         price: '3999',
-        navPath: '/catalog/new-collection/2'
+        navPath: '/catalog/newCollection/2'
     },
     {
         img: Card,
         name: "Название 3",
         price: '3999',
-        navPath: '/catalog/new-collection/3'
+        navPath: '/catalog/newCollection/3'
     }
 ]
 
@@ -114,7 +115,7 @@ export const mockCatalog = [
             },
             {
                 img: CatalogCard,
-                navPath: '/catalog/woman/blacMagnete'
+                navPath: '/catalog/woman/blackMagnete'
             },
             {
                 img: CatalogCard,
@@ -128,32 +129,20 @@ export const mockCatalog = [
     },
     {
         title: 'Новая коллекция',
-        navPath: '/catalog/new-collection',
+        navPath: '/catalog/newCollection',
         items: [
             {
                 img: CatalogCard,
-                navPath: '/catalog/new-collection/1'
+                navPath: '/catalog/newCollection/1'
             },
             {
                 img: CatalogCard,
-                navPath: '/catalog/woman/new-collection/2'
+                navPath: '/catalog/woman/newCollection/2'
             },
             {
                 img: CatalogCard,
-                navPath: '/catalog/woman/new-collection/3'
-            },
-            {
-                img: CatalogCard,
-                navPath: '/catalog/woman/new-collection/4'
-            },
-            {
-                img: CatalogCard,
-                navPath: '/catalog/woman/new-collection/5'
-            },
-            {
-                img: CatalogCard,
-                navPath: '/catalog/woman/new-collection/6'
-            },
+                navPath: '/catalog/woman/newCollection/3'
+            }
         ],
     },
 
@@ -197,50 +186,144 @@ export const mockWomanCatalogVariant: TFlexBoxPartItem[] = [
     }
 ]
 
-export const mockCatalogManView: TFlexBoxPartItem[] = [
+export const mockNewCollectionCatalogVariant: TFlexBoxPartItem[] = [
     {
         img: CatalogCard,
-        navPath: '/catalog/man/clasic/1'
+        navPath: '/catalog/newCollection/1'
     },
     {
         img: CatalogCard,
-        navPath: '/catalog/man/clasic/2'
+        navPath: '/catalog/newCollection/2'
     },
     {
         img: CatalogCard,
-        navPath: '/catalog/man/clasic/3'
-    }
+        navPath: '/catalog/newCollection/3'
+    },
 ]
 
-export const mockCatalogWomanView: TFlexBoxPartItem[] = [
-    {
-        img: CatalogCard,
-        navPath: '/catalog/woman/clasic/1'
-    },
-    {
-        img: CatalogCard,
-        navPath: '/catalog/woman/clasic/2'
-    },
-    {
-        img: CatalogCard,
-        navPath: '/catalog/woman/clasic/3'
-    }
-]
-
-type TProductCardItem = {
-    images: string[];
-    name: string;
-    description: string;
-    consist: string;
-    article: string
-    sizes: string[];
-    price: number
+export const mockCatalogManView: Record<ManView, TFlexBoxPartItem[]> = {
+    base: [
+        {
+            img: CatalogCard,
+            navPath: '/catalog/man/base/1'
+        },
+        {
+            img: CatalogCard,
+            navPath: '/catalog/man/base/2'
+        },
+        {
+            img: CatalogCard,
+            navPath: '/catalog/man/base/3'
+        }
+    ],
+    clasic: [
+        {
+            img: CatalogCard,
+            navPath: '/catalog/man/clasic/1'
+        },
+        {
+            img: CatalogCard,
+            navPath: '/catalog/man/clasic/2'
+        },
+        {
+            img: CatalogCard,
+            navPath: '/catalog/man/clasic/3'
+        }
+    ],
+    sport: [
+        {
+            img: CatalogCard,
+            navPath: '/catalog/man/sport/1'
+        },
+        {
+            img: CatalogCard,
+            navPath: '/catalog/man/sport/2'
+        },
+        {
+            img: CatalogCard,
+            navPath: '/catalog/man/sport/3'
+        }
+    ]
 }
 
-export const mockProductCards: TProductCardItem[] = [
+export const mockCatalogWomanView: Record<WomanView, TFlexBoxPartItem[]> = {
+    base: [
+        {
+            img: CatalogCard,
+            navPath: '/catalog/woman/base/1'
+        },
+        {
+            img: CatalogCard,
+            navPath: '/catalog/woman/base/2'
+        },
+        {
+            img: CatalogCard,
+            navPath: '/catalog/woman/base/3'
+        }
+    ],
+    clasic: [
+        {
+            img: CatalogCard,
+            navPath: '/catalog/woman/clasic/1'
+        },
+        {
+            img: CatalogCard,
+            navPath: '/catalog/woman/clasic/2'
+        },
+        {
+            img: CatalogCard,
+            navPath: '/catalog/woman/clasic/3'
+        }
+    ],
+    sport: [
+        {
+            img: CatalogCard,
+            navPath: '/catalog/woman/sport/1'
+        },
+        {
+            img: CatalogCard,
+            navPath: '/catalog/woman/sport/2'
+        },
+        {
+            img: CatalogCard,
+            navPath: '/catalog/woman/sport/3'
+        }
+    ],
+    blackMagnete: [
+        {
+            img: CatalogCard,
+            navPath: '/catalog/woman/blackMagnete/1'
+        },
+        {
+            img: CatalogCard,
+            navPath: '/catalog/woman/blackMagnete/2'
+        },
+        {
+            img: CatalogCard,
+            navPath: '/catalog/woman/blackMagnete/3'
+        }
+    ],
+    knitted: [
+        {
+            img: CatalogCard,
+            navPath: '/catalog/woman/knitted/1'
+        },
+        {
+            img: CatalogCard,
+            navPath: '/catalog/woman/knitted/2'
+        },
+        {
+            img: CatalogCard,
+            navPath: '/catalog/woman/knitted/3'
+        }
+    ]
+}
+
+export const mockProductCards: ProductPageItem[] = [
     {
+        id: '1',
         images: [CardItem, CardItem, CardItem],
-        name: 'Name name name',
+        name: 'Название 1',
         description: 'Описание товара, описание товара, описание товара, описание товара, описание товара, описание товара, описание товара, описание товара, описание товара, описание товара, описание товара, описание товара, описание товара, описание товара, описание товара.',
         consist: 'consist, consist, consist, consist, consist, consist, consist, consist, consist, consist, consist.',
         sizes: ['XXS', 'XS', 'S', 'M', 'L', 'Xl', 'XXL', 'XXXL'],
@@ -248,8 +331,9 @@ export const mockProductCards: TProductCardItem[] = [
         price: 6000
     },
     {
+        id: '2',
         images: [CardItem, CardItem, CardItem],
-        name: 'Name name name',
+        name: 'Название 2',
         description: 'Описание товара, описание товара, описание товара, описание товара, описание товара, описание товара, описание товара, описание товара, описание товара, описание товара, описание товара, описание товара, описание товара, описание товара, описание товара.',
         consist: 'consist, consist, consist, consist, consist, consist, consist, consist, consist, consist, consist.',
         sizes: ['XXS', 'XS', 'S', 'M', 'L', 'Xl', 'XXL', 'XXXL'],
@@ -257,8 +341,9 @@ export const mockProductCards: TProductCardItem[] = [
         price: 7000
     },
     {
+        id: '3',
         images: [CardItem, CardItem, CardItem],
-        name: 'Name name name',
+        name: 'Название 3',
         description: 'description, description, description, description, description, description, description, description, description, description, description, description, description, description, description, description.',
         consist: 'consist, consist, consist, consist, consist, consist, consist, consist, consist, consist, consist.',
         sizes: ['XXS', 'XS', 'S', 'M', 'L', 'Xl', 'XXL', 'XXXL'],
