@@ -75,15 +75,11 @@ export const mockGridBoxPartItems = [
     { img: Clasic, navPath: '/catalog/woman/clasic' },
     { img: Sport, navPath: '/catalog/woman/sport' },
     { img: Knitted, navPath: '/catalog/woman/knitted' },
-    { img: BlackMagnete, navPath: '/catalog/woman/black-magnete' },
+    { img: BlackMagnete, navPath: '/catalog/woman/blackMagnete' },
     { img: Base, navPath: '/catalog/woman/base' }
 ]
 
-export const mockAdvertisingBlock = [
-    { img: CatalogCard },
-    { img: CatalogCard },
-    { img: CatalogCard },
-]
+export const mockAdvertisingBlock = [CatalogCard, CatalogCard, CatalogCard]
 
 export const mockCatalog = [
     {
@@ -118,7 +114,7 @@ export const mockCatalog = [
             },
             {
                 img: CatalogCard,
-                navPath: '/catalog/woman/black-magnete'
+                navPath: '/catalog/woman/blacMagnete'
             },
             {
                 img: CatalogCard,
@@ -177,6 +173,60 @@ export const mockCatalogVariant: TFlexBoxPartItem[] = [
         navPath: '/catalog/man/sport'
     }
 ]
+
+export const mockWomanCatalogVariant: TFlexBoxPartItem[] = [
+    {
+        img: CatalogCard,
+        navPath: '/catalog/woman/clasic'
+    },
+    {
+        img: CatalogCard,
+        navPath: '/catalog/woman/base'
+    },
+    {
+        img: CatalogCard,
+        navPath: '/catalog/woman/sport'
+    },
+    {
+        img: CatalogCard,
+        navPath: '/catalog/woman/knitted'
+    },
+    {
+        img: CatalogCard,
+        navPath: '/catalog/woman/blackMagnete'
+    }
+]
+
+export const mockCatalogManView: TFlexBoxPartItem[] = [
+    {
+        img: CatalogCard,
+        navPath: '/catalog/man/clasic/1'
+    },
+    {
+        img: CatalogCard,
+        navPath: '/catalog/man/clasic/2'
+    },
+    {
+        img: CatalogCard,
+        navPath: '/catalog/man/clasic/3'
+    }
+]
+
+export const mockCatalogWomanView: TFlexBoxPartItem[] = [
+    {
+        img: CatalogCard,
+        navPath: '/catalog/woman/clasic/1'
+    },
+    {
+        img: CatalogCard,
+        navPath: '/catalog/woman/clasic/2'
+    },
+    {
+        img: CatalogCard,
+        navPath: '/catalog/woman/clasic/3'
+    }
+]
+
 type TProductCardItem = {
     images: string[];
     name: string;

@@ -80,7 +80,7 @@ export const Footer = ({ usefulLinks, categories: { manCatalog, womanCatalog } }
                         <TextManrope fontSize={24} fontWeight='600'>
                             Контактные данные
                         </TextManrope>
-                        <TextManrope onClick={handleClick} sx={{ cursor: 'pointer' }} fontSize={24} fontWeight='400' variant="body1">8 (xxx) xxx-xx-xx</TextManrope>
+                        <TextManrope onClick={handleClick} sx={{ cursor: 'pointer' }} fontSize={24} fontWeight='400' variant="body1">8 (812) xxx-xx-xx</TextManrope>
                         <Snackbar
                             open={openSnackBar}
                             autoHideDuration={2000}
