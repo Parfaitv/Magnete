@@ -8,11 +8,11 @@ export type StartPageCatalog = {
     items: TFlexBoxPartItem[]
 }
 
-export type Variant = 'man' | 'woman'
+export type Variant = "man" | "woman"
 
-export type ManView = 'base' | 'clasic' | 'sport'
+export type ManView = "base" | "clasic" | "sport"
 
-export type WomanView = ManView | 'knitted' | 'blackMagnete'
+export type WomanView = ManView | "knitted" | "blackMagnete"
 
 export type ViewProps<Keys extends string> = {
     [key in Keys]: CatalogSecondaryProps

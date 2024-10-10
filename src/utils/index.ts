@@ -1,3 +1,3 @@
-export { copyTextToClipboard } from './copyTextToClipboard'
-export { useCSSMedia } from './useCSSMedia'
+export { copyTextToClipboard } from "./copyTextToClipboard"
+export { useCSSMedia } from "./useCSSMedia"
 

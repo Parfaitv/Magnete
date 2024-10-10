@@ -1,6 +1,8 @@
-import { Box } from '@mui/material'
-import { ComponentProps } from 'react'
+import { Box } from "@mui/material";
+import { ComponentProps } from "react";
 
-type GridBoxProps = ComponentProps<typeof Box>
+type GridBoxProps = ComponentProps<typeof Box>;
 
-export const GridBox = (props: GridBoxProps) => <Box display='grid' {...props} />
+export const GridBox = (props: GridBoxProps) => (
+  <Box display="grid" {...props} />
+);

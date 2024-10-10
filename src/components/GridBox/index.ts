@@ -1,1 +1,1 @@
-export { GridBox } from './GridBox'
+export { GridBox } from "./GridBox";

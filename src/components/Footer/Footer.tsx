@@ -1,10 +1,10 @@
-import { Link } from "react-router-dom";
-import { FlexBox } from "../FlexBox";
-import { TextManrope } from "../TextManrope";
-import { Icon } from "../Icon";
-import { Snackbar } from "@mui/material";
-import { copyTextToClipboard, useCSSMedia } from "@/utils";
 import { SyntheticEvent, useState } from "react";
+import { copyTextToClipboard, useCSSMedia } from "@/utils";
+import { FlexBox } from "../FlexBox";
+import { Icon } from "../Icon";
+import { Link } from "react-router-dom";
+import { Snackbar } from "@mui/material";
+import { TextManrope } from "../TextManrope";
 
 type ItemFooter = {
   text: string;

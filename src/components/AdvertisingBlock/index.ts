@@ -1,1 +1,1 @@
-export { AdvertisingBlock } from './AdvertisingBlock'
+export { AdvertisingBlock } from "./AdvertisingBlock";

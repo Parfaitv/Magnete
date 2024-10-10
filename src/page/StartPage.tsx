@@ -1,5 +1,5 @@
-import { Image, FlexBoxParts, GridBoxPartPage, GridBox, FlexBox } from '@/components'
-import { useAppSelector } from '@/store'
+import { FlexBox, FlexBoxParts, GridBox, GridBoxPartPage, Image } from "@/components"
+import { useAppSelector } from "@/store"
 
 export const StartPage = () => {
     const { mainPage, manCatalog, newCollection, womanCatalog } = useAppSelector(((state) => state.reducer.startPage))

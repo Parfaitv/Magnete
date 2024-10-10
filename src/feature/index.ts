@@ -1,1 +1,1 @@
-export { reducer } from './storeSlice'
+export { reducer } from "./storeSlice"

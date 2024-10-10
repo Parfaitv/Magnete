@@ -1,6 +1,16 @@
-import { AboutPage, Catalog, CatalogType, StartPage, ProductCard, DeliveryPage, ErrorPage, NewCollectionPage, CollectionCard } from "@/page"
-import { Same } from "@/components"
-import { Route, Routes } from "react-router-dom"
+import {
+  AboutPage,
+  Catalog,
+  CatalogType,
+  CollectionCard,
+  DeliveryPage,
+  ErrorPage,
+  NewCollectionPage,
+  ProductCard,
+  StartPage,
+} from "@/page";
+import { Route, Routes } from "react-router-dom";
+import { Same } from "@/components";
 
 export const App = () => {
   return (
@@ -9,16 +19,44 @@ export const App = () => {
         <Route caseSensitive index path="/" element={<StartPage />} />
         <Route caseSensitive path="about" element={<AboutPage />} />
         <Route caseSensitive path="delivery" element={<DeliveryPage />} />
-        <Route caseSensitive path="services" element={<div>This page for services</div>} />
-        <Route caseSensitive path="contacts" element={<div>This page for contacts</div>} />
+        <Route
+          caseSensitive
+          path="services"
+          element={<div>This page for services</div>}
+        />
+        <Route
+          caseSensitive
+          path="contacts"
+          element={<div>This page for contacts</div>}
+        />
         <Route caseSensitive path="catalog" element={<Catalog />} />
-        <Route caseSensitive path="catalog/newCollection" element={<NewCollectionPage />} />
-        <Route caseSensitive path="catalog/newCollection/:id" element={<CollectionCard />} />
-        <Route caseSensitive path="catalog/:variant" element={<CatalogType />} />
-        <Route caseSensitive path="catalog/:variant/:view" element={<CatalogType />} />
-        <Route caseSensitive path="catalog/:variant/:view/:id" element={<ProductCard />} />
+        <Route
+          caseSensitive
+          path="catalog/newCollection"
+          element={<NewCollectionPage />}
+        />
+        <Route
+          caseSensitive
+          path="catalog/newCollection/:id"
+          element={<CollectionCard />}
+        />
+        <Route
+          caseSensitive
+          path="catalog/:variant"
+          element={<CatalogType />}
+        />
+        <Route
+          caseSensitive
+          path="catalog/:variant/:view"
+          element={<CatalogType />}
+        />
+        <Route
+          caseSensitive
+          path="catalog/:variant/:view/:id"
+          element={<ProductCard />}
+        />
       </Route>
       <Route path="*" element={<ErrorPage />} />
-    </Routes >
-  )
-}
+    </Routes>
+  );
+};

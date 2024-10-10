@@ -1,36 +1,31 @@
-import { createTheme } from '@mui/material/styles';
+import { createTheme } from "@mui/material/styles";
 
 export const theme = createTheme({
-    palette: {
-        primary: {
-            main: '#556cd6',
-        },
-        secondary: {
-            main: '#19857b',
-        },
-        error: {
-            main: '#ff1744',
-        },
+  palette: {
+    primary: {
+      main: "#556cd6",
     },
-    typography: {
-        fontFamily: [
-            '-apple-system',
-            'BlinkMacSystemFont',
-            '"Segoe UI"',
-            'Roboto',
-            '"Helvetica Neue"',
-            'Arial',
-            'sans-serif',
-            '"Apple Color Emoji"',
-            '"Segoe UI Emoji"',
-            '"Segoe UI Symbol"',
-            'Manrope'
-        ].join(','),
-        // fontFamily: ', Arial',
+    secondary: {
+      main: "#19857b",
     },
-    components: {
-        MuiCssBaseline: {
-            styleOverrides: `
+    error: {
+      main: "#ff1744",
+    },
+  },
+  typography: {
+    fontFamily: [
+      "-apple-system",
+      "BlinkMacSystemFont",
+      "Roboto",
+      "Arial",
+      "sans-serif",
+      "Manrope",
+    ].join(","),
+    // fontFamily: ', Arial',
+  },
+  components: {
+    MuiCssBaseline: {
+      styleOverrides: `
             @font-face {
               font-family: 'Manrope';
               font-style: normal;
@@ -38,6 +33,6 @@ export const theme = createTheme({
               font-weight: 400;
             }
           `,
-        },
     },
+  },
 });

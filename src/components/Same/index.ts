@@ -1,1 +1,1 @@
-export { Same } from './Same'
+export { Same } from "./Same";

@@ -1,8 +1,8 @@
-import { Snackbar } from "@mui/material";
-import { copyTextToClipboard, useCSSMedia } from "../../utils";
 import { SyntheticEvent, useEffect, useState } from "react";
-import { Icon } from "../Icon";
+import { copyTextToClipboard, useCSSMedia } from "../../utils";
 import { FlexBox } from "../FlexBox";
+import { Icon } from "../Icon";
+import { Snackbar } from "@mui/material";
 import { TextManrope } from "../TextManrope";
 
 export const Header = () => {

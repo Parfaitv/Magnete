@@ -1,1 +1,1 @@
-export { GridBoxPartPage } from './GridBoxPartPage'
+export { GridBoxPartPage } from "./GridBoxPartPage";
