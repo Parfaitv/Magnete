@@ -3,10 +3,12 @@ import {
   Catalog,
   CatalogType,
   CollectionCard,
+  ContactsPage,
   DeliveryPage,
   ErrorPage,
   NewCollectionPage,
   ProductCard,
+  ServicesPage,
   StartPage,
 } from "@/page";
 import { Route, Routes, useLocation } from "react-router-dom";
@@ -26,16 +28,8 @@ export const App = () => {
         <Route caseSensitive index path="/" element={<StartPage />} />
         <Route caseSensitive path="about" element={<AboutPage />} />
         <Route caseSensitive path="delivery" element={<DeliveryPage />} />
-        <Route
-          caseSensitive
-          path="services"
-          element={<div>This page for services</div>}
-        />
-        <Route
-          caseSensitive
-          path="contacts"
-          element={<div>This page for contacts</div>}
-        />
+        <Route caseSensitive path="services" element={<ServicesPage />} />
+        <Route caseSensitive path="contacts" element={<ContactsPage />} />
         <Route caseSensitive path="catalog" element={<Catalog />} />
         <Route
           caseSensitive

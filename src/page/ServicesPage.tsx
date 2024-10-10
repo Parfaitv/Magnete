@@ -2,10 +2,10 @@ import { AdvertisingBlock, FlexBox, GridBox, TextManrope } from "@/components";
 import { useAppSelector } from "@/store";
 import { useCSSMedia } from "@/utils";
 
-export const DeliveryPage = () => {
+export const ServicesPage = () => {
   const isMobile = useCSSMedia();
   const { advertisingBlock, description, title } = useAppSelector(
-    (state) => state.reducer.deliveryPage
+    (state) => state.reducer.servicesPage
   );
   return (
     <GridBox
