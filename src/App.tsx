@@ -9,10 +9,17 @@ import {
   ProductCard,
   StartPage,
 } from "@/page";
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, useLocation } from "react-router-dom";
 import { Same } from "@/components";
+import { useEffect } from "react";
 
 export const App = () => {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "auto" });
+  }, [pathname]);
+
   return (
     <Routes>
       <Route element={<Same />} errorElement={<ErrorPage />}>

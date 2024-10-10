@@ -6,9 +6,14 @@ export const Same = () => (
     <Header />
     <Outlet />
     <GridBox gridTemplateColumns="1fr">
-      <GridBox gridTemplateColumns="1fr" gap="8px">
+      <GridBox gridTemplateColumns="1fr">
         <MessageBox
-          title="Нужна консультация? Напишите стилисту бренда ВИКТОРИИ СИТНИК"
+          title={
+            <>
+              Нужна консультация?
+              <br /> Напишите стилисту бренда ВИКТОРИИ СИТНИК
+            </>
+          }
           telegramUrl="https://web.telegram.org/k/"
           instagramUrl="https://instagram.com"
         />

@@ -21,7 +21,6 @@ export const theme = createTheme({
       "sans-serif",
       "Manrope",
     ].join(","),
-    // fontFamily: ', Arial',
   },
   components: {
     MuiCssBaseline: {

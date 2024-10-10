@@ -56,14 +56,18 @@ export const Footer = ({
           alignItems="center"
         >
           <FlexBox flexDirection="column">
-            <TextManrope fontSize={24} fontWeight="600">
+            <TextManrope marginBottom={"20px"} fontSize={24} fontWeight="400">
               Полезный ссылки
             </TextManrope>
             <FlexBox gap="8px" flexDirection="column">
               {usefulLinks.map((link) => (
                 <TextManrope
                   key={`${link.navPath}_${link.text}`}
-                  style={{ textDecoration: "none", color: "black" }}
+                  style={{
+                    textDecoration: "none",
+                    color: "#545454",
+                    fontWeight: 100,
+                  }}
                   as={Link}
                   to={link.navPath}
                 >
@@ -80,15 +84,26 @@ export const Footer = ({
           )}
         </FlexBox>
         <FlexBox flexDirection="column">
-          <TextManrope fontSize={24} fontWeight="600">
+          <TextManrope marginBottom={"20px"} fontSize={24} fontWeight="400">
             Категории товаров
           </TextManrope>
-          <TextManrope fontSize={24}>Женский каталог</TextManrope>
-          <FlexBox gap="8px" flexDirection="column">
+          <TextManrope
+            fontWeight={"100"}
+            color={"#545454"}
+            marginBottom={"10px"}
+            fontSize={24}
+          >
+            Женский каталог
+          </TextManrope>
+          <FlexBox gap="8px" marginBottom={"20px"} flexDirection="column">
             {womanCatalog.map((link) => (
               <TextManrope
                 key={`${link.navPath}_${link.text}`}
-                style={{ textDecoration: "none", color: "black" }}
+                style={{
+                  textDecoration: "none",
+                  color: "#545454",
+                  fontWeight: 100,
+                }}
                 as={Link}
                 to={link.navPath}
               >
@@ -96,12 +111,23 @@ export const Footer = ({
               </TextManrope>
             ))}
           </FlexBox>
-          <TextManrope fontSize={24}>Мужской каталог</TextManrope>
+          <TextManrope
+            fontWeight={"100"}
+            color={"#545454"}
+            marginBottom={"10px"}
+            fontSize={24}
+          >
+            Мужской каталог
+          </TextManrope>
           <FlexBox gap="8px" flexDirection="column">
             {manCatalog.map((link) => (
               <TextManrope
                 key={`${link.navPath}_${link.text}`}
-                style={{ textDecoration: "none black", color: "black" }}
+                style={{
+                  textDecoration: "none",
+                  color: "#545454",
+                  fontWeight: 100,
+                }}
                 as={Link}
                 to={link.navPath}
               >
@@ -119,15 +145,16 @@ export const Footer = ({
       >
         <FlexBox flexDirection="column" width="18rem" gap="1rem">
           <FlexBox flexDirection="column">
-            <TextManrope fontSize={24} fontWeight="600">
+            <TextManrope marginBottom={"20px"} fontSize={24} fontWeight="400">
               Контактные данные
             </TextManrope>
             <TextManrope
               onClick={handleClick}
               sx={{ cursor: "pointer" }}
               fontSize={24}
-              fontWeight="400"
+              fontWeight="100"
               variant="body1"
+              marginBottom={"10px"}
             >
               8 (812) xxx-xx-xx
             </TextManrope>
@@ -137,14 +164,19 @@ export const Footer = ({
               onClose={handleClose}
               message="Номер телефона успешно скопирован!"
             />
-            <TextManrope fontWeight="400" fontSize={24} variant="body1">
+            <TextManrope
+              marginBottom={"10px"}
+              fontWeight="100"
+              fontSize={24}
+              variant="body1"
+            >
               magnete.spb@mail.ru
             </TextManrope>
-            <TextManrope variant="body1">
+            <TextManrope variant="body1" fontWeight={"100"} color="#545454">
               бесплатная доставка по России
             </TextManrope>
           </FlexBox>
-          <FlexBox justifyContent="space-around">
+          <FlexBox marginBottom={"20px"} marginTop={"20px"} gap={"20px"}>
             <Link
               style={{
                 backgroundColor: "black",
@@ -183,11 +215,13 @@ export const Footer = ({
             </Link>
           </FlexBox>
           <FlexBox gap="1rem" flexDirection="column">
-            <TextManrope>
+            <TextManrope fontWeight={"100"} color="#545454">
               Информация для покупателей. Торговая марка Magnete. Одежда
               собственного производства.
             </TextManrope>
-            <TextManrope>Все права защищены. © Magnete, 2022-2024</TextManrope>
+            <TextManrope fontWeight={"100"} color="#545454">
+              Все права защищены. © Magnete, 2022-2024
+            </TextManrope>
           </FlexBox>
         </FlexBox>
         {isMobile && (

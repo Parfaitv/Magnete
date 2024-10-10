@@ -10,7 +10,7 @@ export const AboutPage = () => {
   return (
     <GridBox
       paddingTop="4rem"
-      gridTemplateRows={isMobile ? "100% 1fr" : "1fr 1fr"}
+      gridTemplateRows={isMobile ? "100% 1fr" : "0.5fr 1fr"}
       gap="1rem"
     >
       <FlexBox

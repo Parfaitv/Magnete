@@ -1,6 +1,7 @@
 import { Button } from "@mui/material";
 import { GridBox } from "../GridBox";
 import { Icon } from "../Icon";
+import { ReactNode } from "react";
 import { TextManrope } from "../TextManrope";
 import { useCSSMedia } from "@/utils";
 
@@ -9,7 +10,7 @@ export const MessageBox = ({
   telegramUrl,
   instagramUrl,
 }: {
-  title: string;
+  title: ReactNode;
   telegramUrl: string;
   instagramUrl: string;
 }) => {
@@ -18,45 +19,67 @@ export const MessageBox = ({
   return (
     <GridBox
       bgcolor="#221121"
+      height={"146px"}
       padding="6px 4px"
-      gridTemplateColumns={isMobile ? "1fr" : "2fr 1fr"}
+      alignItems={"center"}
+      justifyContent={"center"}
     >
-      <GridBox>
+      <GridBox
+        maxWidth={"1400px"}
+        paddingX={"20px"}
+        gridTemplateColumns={isMobile ? "1fr" : "2fr 1fr"}
+      >
         <TextManrope
           sx={{
             textWrap: "balance",
+            fontWeight: 100,
+            fontSize: 18,
           }}
-          color="#fff"
+          color="#d9d6d6"
         >
           {title}
         </TextManrope>
-      </GridBox>
-      <GridBox gridTemplateColumns={"1fr 1fr"} gap={isMobile ? "1rem" : "3rem"}>
-        <GridBox>
-          <Button
-            color="inherit"
-            target="_blank"
-            href={telegramUrl}
-            sx={{
-              background: "linear-gradient(120deg, #948C9B, #BEA7AB)",
-            }}
-          >
-            <TextManrope>Написать</TextManrope>
-            <Icon icon="telegram" />
-          </Button>
-        </GridBox>
-        <GridBox>
-          <Button
-            color="inherit"
-            target="_blank"
-            href={instagramUrl}
-            sx={{
-              background: "linear-gradient(120deg, #948C9B, #BEA7AB)",
-            }}
-          >
-            <TextManrope>Написать</TextManrope>
-            <Icon icon="instagram" />
-          </Button>
+
+        <GridBox
+          gridTemplateColumns={"1fr 1fr"}
+          gap={isMobile ? "1rem" : "3rem"}
+        >
+          <GridBox>
+            <Button
+              color="inherit"
+              target="_blank"
+              href={telegramUrl}
+              sx={{
+                background: "linear-gradient(120deg, #948C9B, #BEA7AB)",
+                height: 60,
+                width: 238,
+                color: "white",
+                gap: "20px",
+                borderRadius: 0,
+              }}
+            >
+              <TextManrope>Написать</TextManrope>
+              <Icon icon="telegram" />
+            </Button>
+          </GridBox>
+          <GridBox>
+            <Button
+              color="inherit"
+              target="_blank"
+              href={instagramUrl}
+              sx={{
+                background: "linear-gradient(120deg, #948C9B, #BEA7AB)",
+                height: 60,
+                width: 238,
+                color: "white",
+                gap: "20px",
+                borderRadius: 0,
+              }}
+            >
+              <TextManrope>Написать</TextManrope>
+              <Icon icon="instagram" />
+            </Button>
+          </GridBox>
         </GridBox>
       </GridBox>
     </GridBox>
