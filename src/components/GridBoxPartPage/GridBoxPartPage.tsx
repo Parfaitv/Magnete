@@ -47,6 +47,7 @@ export const GridBoxPartPage = ({
             textDecoration: "none",
             fontSize: 32,
             fontWeight: "100",
+            cursor: "pointer",
           }}
           onClick={() => navigate(navPath)}
         >
