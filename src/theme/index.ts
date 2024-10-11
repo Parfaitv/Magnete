@@ -1,37 +1,17 @@
-import { createTheme } from "@mui/material/styles";
+import { ThemeOptions } from "@mui/material/styles";
 
-export const theme = createTheme({
+export const themeOptions: ThemeOptions = {
   palette: {
+    mode: "light",
     primary: {
-      main: "#556cd6",
+      main: "#1976d2",
     },
     secondary: {
-      main: "#19857b",
+      main: "#9c27b0",
     },
-    error: {
-      main: "#ff1744",
-    },
-  },
-  typography: {
-    fontFamily: [
-      "-apple-system",
-      "BlinkMacSystemFont",
-      "Roboto",
-      "Arial",
-      "sans-serif",
-      "Manrope",
-    ].join(","),
-  },
-  components: {
-    MuiCssBaseline: {
-      styleOverrides: `
-            @font-face {
-              font-family: 'Manrope';
-              font-style: normal;
-              font-display: swap;
-              font-weight: 400;
-            }
-          `,
+    background: {
+      default: "#fff",
+      paper: "#fff",
     },
   },
-});
+};

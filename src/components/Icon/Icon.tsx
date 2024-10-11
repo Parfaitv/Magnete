@@ -11,7 +11,6 @@ type TIconStyledProps = {
   $width?: CSSProperties["width"];
   $height?: CSSProperties["height"];
   $color?: CSSProperties["color"];
-  $onClick?: (e: React.MouseEvent<HTMLElement>) => void;
 };
 
 const getHeight = ({ $height }: Pick<TIconStyledProps, "$height">) => {
@@ -48,7 +47,7 @@ const IconStyled = styled.span<TIconStyledProps>`
   display: inline-flex;
   flex-direction: row;
   align-items: center;
-  cursor: ${({ $onClick }) => ($onClick ? "pointer" : "default")}
+  cursor: ${({ onClick }) => (onClick ? "pointer" : "default")}
     ${({ $height }) => getHeight({ $height })}
     ${({ $width }) => getWidth({ $width })}
     ${({ $color }) => getFillStyle({ $color })};
@@ -61,7 +60,6 @@ export const Icon = ({ icon, height, width, onClick, color }: TIcon) => {
       $width={width}
       $height={height}
       $color={color}
-      $onClick={onClick}
       onClick={onClick}
     >
       <Icon />

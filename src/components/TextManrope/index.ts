@@ -1,5 +1,4 @@
-import { Typography } from "@mui/material";
-import styled from "styled-components";
+import { Typography, styled } from "@mui/material";
 
 export const TextManrope = styled(Typography)`
   font-family: "Manrope", sans-serif;

@@ -4,11 +4,13 @@ import { FlexBox } from "../FlexBox";
 import { Icon } from "../Icon";
 import { Snackbar } from "@mui/material";
 import { TextManrope } from "../TextManrope";
+import { useNavigate } from "react-router";
 
 export const Header = () => {
   const [openSnackBar, setOpenSnackBar] = useState(false);
   const [scrollY, setScrollY] = useState(0);
   const isMobile = useCSSMedia(525);
+  const navigate = useNavigate();
 
   const logit = () => {
     setScrollY(window.pageYOffset);
@@ -67,7 +69,7 @@ export const Header = () => {
           gap="8px"
         >
           <Icon icon="storeLogo" />
-          <Icon icon="storeName" />
+          <Icon icon="storeName" onClick={() => navigate("/")} />
         </FlexBox>
         {!isMobile && (
           <FlexBox flexDirection="column" justifyContent="end" alignItems="end">

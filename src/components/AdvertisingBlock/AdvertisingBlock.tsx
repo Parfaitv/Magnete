@@ -1,4 +1,5 @@
 import { GridBox } from "../GridBox";
+import { Image } from "../Image";
 
 type AdvertisingBlockProps = {
   items: string[];
@@ -7,17 +8,10 @@ type AdvertisingBlockProps = {
 export const AdvertisingBlock = ({ items }: AdvertisingBlockProps) => {
   return (
     <GridBox gridTemplateColumns="repeat(3, 1fr)">
-      {items.map((img) => (
-        <GridBox
-          width="100%"
-          height="960px"
-          sx={{
-            backgroundImage: `url(${img})`,
-            backgroundSize: "100% 100%",
-            backgroundRepeat: "no-repeat",
-            backgroundPosition: "center",
-          }}
-        />
+      {items.map((img, i) => (
+        <GridBox key={img + i} width="100%" height="960px">
+          <Image src={img} alt={img + i} />
+        </GridBox>
       ))}
     </GridBox>
   );
