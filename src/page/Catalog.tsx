@@ -1,10 +1,11 @@
 import { FlexBox, GridBox, TextManrope } from "@/components";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useAppSelector } from "@/store";
 import { useCSSMedia } from "@/utils";
 
 export const Catalog = () => {
   const isMobile = useCSSMedia();
+  const navigate = useNavigate();
   const catalogState = useAppSelector((state) => state.reducer.catalogPage);
 
   return (
@@ -23,14 +24,13 @@ export const Catalog = () => {
         {catalogState.map(({ items, navPath, title }, i) => (
           <GridBox key={`${title}_${i}`} gridTemplateColumns="1fr" gap="1rem">
             <TextManrope
-              as={Link}
-              to={navPath}
               style={{
                 color: "black",
                 textDecoration: "none",
                 fontSize: 32,
                 fontWeight: "100",
               }}
+              onClick={() => navigate(navPath)}
             >
               {title}
             </TextManrope>

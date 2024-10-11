@@ -1,10 +1,10 @@
 import { CSSProperties } from "react";
 import { FlexBox } from "../FlexBox";
 import { FlexBoxPartItem } from "./FlexBoxPartItem";
-import { Link } from "react-router-dom";
 import { TFlexBoxPartItem } from "./types";
 import { TextManrope } from "../TextManrope";
 import { useCSSMedia } from "@/utils/useCSSMedia";
+import { useNavigate } from "react-router-dom";
 
 type FlexBoxPartsProps = {
   header?: {
@@ -21,18 +21,18 @@ export const FlexBoxParts = ({
   height = "960px",
 }: FlexBoxPartsProps) => {
   const isMobile = useCSSMedia();
+  const navigate = useNavigate();
   return (
     <FlexBox height="100%" flexDirection="column" gap="1rem">
       {header && (
         <TextManrope
-          as={Link}
-          to={header.navPath}
           style={{
             color: "black",
             textDecoration: "none",
             fontSize: 32,
             fontWeight: "100",
           }}
+          onClick={() => navigate(header.navPath)}
         >
           {header.title}
         </TextManrope>

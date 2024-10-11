@@ -42,14 +42,13 @@ export const GridBoxPartPage = ({
     <GridBox gridTemplateColumns="1fr">
       <Box>
         <TextManrope
-          as={Link}
-          to={navPath}
           style={{
             color: "black",
             textDecoration: "none",
             fontSize: 32,
             fontWeight: "100",
           }}
+          onClick={() => navigate(navPath)}
         >
           {title}
         </TextManrope>
