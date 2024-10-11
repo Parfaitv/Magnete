@@ -31,6 +31,7 @@ export const FlexBoxParts = ({
             textDecoration: "none",
             fontSize: 32,
             fontWeight: "100",
+            cursor: "pointer",
           }}
           onClick={() => navigate(header.navPath)}
         >

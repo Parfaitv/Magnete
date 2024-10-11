@@ -205,6 +205,7 @@ export const Footer = ({
               />
               <TextManrope
                 onClick={() => handleClick("magnete.spb@mail.ru")}
+                sx={{ cursor: "pointer" }}
                 marginBottom={"10px"}
                 fontWeight="100"
                 fontSize={24}
