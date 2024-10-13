@@ -94,7 +94,6 @@ export const Footer = ({
                       textDecoration: "none",
                       color: "#545454",
                       fontWeight: 100,
-                      cursor: "pointer",
                       ":hover": {
                         textDecoration: "underline;",
                         fontWeight: 600,
@@ -134,7 +133,6 @@ export const Footer = ({
                     textDecoration: "none",
                     color: "#545454",
                     fontWeight: 100,
-                    cursor: "pointer",
                     ":hover": {
                       textDecoration: "underline;",
                       fontWeight: 600,
@@ -162,7 +160,6 @@ export const Footer = ({
                     textDecoration: "none",
                     color: "#545454",
                     fontWeight: 100,
-                    cursor: "pointer",
                     ":hover": {
                       textDecoration: "underline;",
                       fontWeight: 600,

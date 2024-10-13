@@ -1,12 +1,10 @@
 import { CSSProperties } from "react";
-
-export type TFlexBoxPartItem = {
-  img: string;
-  name?: string;
-  price?: string;
-  navPath: string;
-};
+import { StartPageCatalog, TFlexBoxPartItem } from "@/types";
 
 export type FlexBoxPartItemProps = TFlexBoxPartItem & {
   height: CSSProperties["height"];
+};
+
+export type FlexBoxPartsProps = StartPageCatalog & {
+  height?: CSSProperties["height"];
 };

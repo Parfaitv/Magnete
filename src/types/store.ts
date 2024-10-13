@@ -1,4 +1,9 @@
-import { TFlexBoxPartItem } from "@/components/FlexBoxPartPage/types";
+export type TFlexBoxPartItem = {
+  img: string;
+  name?: string;
+  price?: string;
+  navPath: string;
+};
 
 export type StartPageCatalog = {
   header: {
@@ -73,6 +78,7 @@ export type StoreState = {
   contactsPage: SecondaryPages;
   servicesPage: SecondaryPages;
   productPage: ProductPageProps;
+  burgerMenu: MenuItem[];
 };
 
 export type TUseParams = {
@@ -80,3 +86,12 @@ export type TUseParams = {
   view: WomanView | ManView;
   id: string;
 };
+
+export type FooterItem = {
+  navPath: string;
+  text: string;
+};
+
+export type MenuItem = {
+  children?: MenuItem[];
+} & FooterItem;

@@ -1,19 +1,9 @@
-import { CSSProperties } from "react";
 import { FlexBox } from "../FlexBox";
 import { FlexBoxPartItem } from "./FlexBoxPartItem";
-import { TFlexBoxPartItem } from "./types";
+import { FlexBoxPartsProps } from "./types";
 import { TextManrope } from "../TextManrope";
 import { useCSSMedia } from "@/utils/useCSSMedia";
 import { useNavigate } from "react-router-dom";
-
-type FlexBoxPartsProps = {
-  header?: {
-    title: string;
-    navPath: string;
-  };
-  items: TFlexBoxPartItem[];
-  height?: CSSProperties["height"];
-};
 
 export const FlexBoxParts = ({
   header,
@@ -22,6 +12,7 @@ export const FlexBoxParts = ({
 }: FlexBoxPartsProps) => {
   const isMobile = useCSSMedia();
   const navigate = useNavigate();
+
   return (
     <FlexBox height="100%" flexDirection="column" gap="1rem">
       {header && (

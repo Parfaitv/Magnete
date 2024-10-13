@@ -1,8 +1,8 @@
 import { Box } from "@mui/material";
 import { GridBox } from "../GridBox";
+import { Image } from "../Image";
 import { Link } from "react-router-dom";
 import { TextManrope } from "../TextManrope";
-import { useCSSMedia } from "@/utils/useCSSMedia";
 import { useNavigate } from "react-router";
 
 type Item = {
@@ -18,17 +18,12 @@ type GridBoxPartPageProps = {
   };
 };
 
-const maxIsMobile = "720px";
-const minIsMobile = "360px";
-const maxDesktop = "1440px";
-const minDesktop = "720px";
-
 export const GridBoxPartPage = ({
   items,
   header: { title, navPath },
 }: GridBoxPartPageProps) => {
   const navigate = useNavigate();
-  const isMobile = useCSSMedia();
+
   if (items.length < 5) navigate("/404");
   const {
     0: item1,
@@ -56,58 +51,43 @@ export const GridBoxPartPage = ({
       </Box>
       <GridBox
         gridTemplateColumns="repeat(4, 1fr)"
-        gridTemplateRows={`repeat(3, ${isMobile ? minIsMobile : maxIsMobile})`}
+        gridTemplateRows={`repeat(3, 1fr)`}
       >
         <Link
           to={item1.navPath}
           style={{
-            backgroundImage: `url(${item1.img})`,
-            backgroundSize: "100% 100%",
-            maxHeight: isMobile ? maxIsMobile : maxDesktop,
             gridColumn: "1/3",
             gridRow: "1/3",
           }}
-        />
-        <GridBox
-          gridTemplateColumns="1fr 1fr"
-          gridColumn="3/5"
-          maxHeight={isMobile ? minIsMobile : minDesktop}
         >
-          <Link
-            to={item2.navPath}
-            style={{
-              backgroundImage: `url(${item2.img})`,
-              backgroundSize: "100% 100%",
-            }}
-          />
-          <Link
-            to={item3.navPath}
-            style={{
-              backgroundImage: `url(${item3.img})`,
-              backgroundSize: "100% 100%",
-            }}
-          />
+          <Image src={item1.img} alt={item1.img} style={{ height: "100%" }} />
+        </Link>
+        <GridBox gridTemplateColumns="1fr 1fr" gridColumn="3/5">
+          <Link to={item2.navPath}>
+            <Image src={item2.img} alt={item2.img} style={{ height: "100%" }} />
+          </Link>
+          <Link to={item3.navPath}>
+            <Image src={item3.img} alt={item3.img} style={{ height: "100%" }} />
+          </Link>
         </GridBox>
         <Link
           to={item4.navPath}
           style={{
-            backgroundImage: `url(${item4.img})`,
-            backgroundSize: "100% 100%",
             gridColumn: "3/5",
             gridRow: "2/4",
-            maxHeight: isMobile ? maxIsMobile : maxDesktop,
           }}
-        />
+        >
+          <Image src={item4.img} alt={item4.img} style={{ height: "100%" }} />
+        </Link>
         <Link
           to={item5.navPath}
           style={{
-            backgroundImage: `url(${item5.img})`,
-            backgroundSize: "100% 100%",
             gridColumn: "1/3",
             gridRow: "3/5",
-            maxHeight: isMobile ? minIsMobile : minDesktop,
           }}
-        />
+        >
+          <Image src={item5.img} alt={item5.img} style={{ height: "100%" }} />
+        </Link>
       </GridBox>
     </GridBox>
   );

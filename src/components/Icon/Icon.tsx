@@ -47,10 +47,10 @@ const IconStyled = styled.span<TIconStyledProps>`
   display: inline-flex;
   flex-direction: row;
   align-items: center;
-  cursor: ${({ onClick }) => (onClick ? "pointer" : "default")}
-    ${({ $height }) => getHeight({ $height })}
-    ${({ $width }) => getWidth({ $width })}
-    ${({ $color }) => getFillStyle({ $color })};
+  cursor: ${({ onClick }) => (onClick ? "pointer" : "default")};
+  ${({ $color }) => getFillStyle({ $color })}
+  ${({ $height }) => getHeight({ $height })}
+  ${({ $width }) => getWidth({ $width })}
 `;
 
 export const Icon = ({ icon, height, width, onClick, color }: TIcon) => {

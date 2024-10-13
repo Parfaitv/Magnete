@@ -1,4 +1,5 @@
 import {
+  burgerMenuItems,
   mockCatalog,
   mockCatalogManView,
   mockCatalogVariant,
@@ -121,6 +122,7 @@ const initialState: StoreState = {
     },
     newCollection: mockProductCards,
   },
+  burgerMenu: burgerMenuItems,
 };
 
 const storeSlice = createSlice({

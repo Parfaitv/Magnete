@@ -1,4 +1,10 @@
-import { ManView, ProductPageItem, WomanView } from "@/types";
+import {
+  ManView,
+  MenuItem,
+  ProductPageItem,
+  TFlexBoxPartItem,
+  WomanView,
+} from "@/types";
 import Base from "@/picture/Base.png";
 import BlackMagnete from "@/picture/BlackMagnete.png";
 import Card from "@/picture/Card.png";
@@ -7,7 +13,6 @@ import CatalogCard from "@/picture/CatalogCard.png";
 import Clasic from "@/picture/Clasic.png";
 import Knitted from "@/picture/Knitted.png";
 import Sport from "@/picture/Sport.png";
-import { TFlexBoxPartItem } from "@/components/FlexBoxPartPage/types";
 
 export const mockCollection: TFlexBoxPartItem[] = [
   {
@@ -355,4 +360,38 @@ export const mockProductCards: ProductPageItem[] = [
     article: "Артикул товара: xxxxxxxx",
     price: 8000,
   },
+];
+
+export const burgerMenuItems: MenuItem[] = [
+  {
+    navPath: "/catalog",
+    text: "Каталог",
+    children: [
+      {
+        navPath: "/catalog/woman",
+        text: "Женская одежда",
+        children: [
+          { navPath: "/catalog/woman/base", text: "База" },
+          { navPath: "/catalog/woman/clasic", text: "Классика" },
+          { navPath: "/catalog/woman/sport", text: "Спорт" },
+          { navPath: "/catalog/woman/knitted", text: "Трикотаж" },
+          { navPath: "/catalog/woman/blackMagnete", text: "Black Magnete" },
+        ],
+      },
+      {
+        navPath: "/catalog/man",
+        text: "Мужская одежда",
+        children: [
+          { navPath: "/catalog/man/base", text: "База" },
+          { navPath: "/catalog/man/clasic", text: "Классика" },
+          { navPath: "/catalog/man/sport", text: "Спорт" },
+        ],
+      },
+      { navPath: "/catalog/newCollection", text: "Новая коллекция" },
+    ],
+  },
+  { navPath: "/about", text: "О бренде" },
+  { navPath: "/delivery", text: "Доставка" },
+  { navPath: "/services", text: "Услуги стилиста" },
+  { navPath: "/contacts", text: "Контакты" },
 ];

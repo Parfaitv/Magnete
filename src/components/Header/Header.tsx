@@ -1,14 +1,18 @@
 import { SyntheticEvent, useEffect, useState } from "react";
-import { copyTextToClipboard, useCSSMedia } from "../../utils";
-import { FlexBox } from "../FlexBox";
-import { Icon } from "../Icon";
-import { Snackbar } from "@mui/material";
-import { TextManrope } from "../TextManrope";
+import { copyTextToClipboard, useCSSMedia } from "@/utils";
+import { FlexBox, TextManrope, Icon, MenuList } from "@/components";
+import { Drawer, Snackbar } from "@mui/material";
 import { useNavigate } from "react-router";
+import { MenuItem } from "@/types";
 
-export const Header = () => {
+type HeaderProps = {
+  menuItems: MenuItem[];
+};
+
+export const Header = ({ menuItems }: HeaderProps) => {
   const [openSnackBar, setOpenSnackBar] = useState(false);
   const [scrollY, setScrollY] = useState(0);
+  const [openMenu, setOpenMenu] = useState(false);
   const isMobile = useCSSMedia(525);
   const navigate = useNavigate();
 
@@ -68,7 +72,7 @@ export const Header = () => {
           padding="10px 0"
           gap="8px"
         >
-          <Icon icon="storeLogo" />
+          <Icon icon="storeLogo" onClick={() => setOpenMenu(true)} />
           <Icon icon="storeName" onClick={() => navigate("/")} />
         </FlexBox>
         {!isMobile && (
@@ -90,6 +94,24 @@ export const Header = () => {
           </FlexBox>
         )}
       </FlexBox>
+      <Drawer anchor="left" open={openMenu} onClose={() => setOpenMenu(false)}>
+        <FlexBox
+          padding="10px"
+          minWidth="365px"
+          flexDirection="column"
+          gap="16px"
+        >
+          <FlexBox width="100%" justifyContent="end">
+            <Icon
+              icon="close"
+              width={24}
+              height={24}
+              onClick={() => setOpenMenu(false)}
+            />
+          </FlexBox>
+          <MenuList closeMenu={() => setOpenMenu(false)} items={menuItems} />
+        </FlexBox>
+      </Drawer>
     </FlexBox>
   );
 };

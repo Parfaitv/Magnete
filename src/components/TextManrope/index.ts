@@ -5,4 +5,5 @@ export const TextManrope = styled(Typography)`
   font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;
+  ${({ onClick }) => onClick && "cursor: pointer;"}
 `;

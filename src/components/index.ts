@@ -10,3 +10,4 @@ export { Icon } from "./Icon";
 export { Image } from "./Image";
 export { MessageBox } from "./MessageBox";
 export { TextManrope } from "./TextManrope";
+export { MenuList } from "./MenuList";
