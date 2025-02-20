@@ -24,7 +24,12 @@ export const FlexBoxPartItem = ({
     <Image
       src={img}
       alt={img + name}
-      style={{ width: "100%", height: "100%" }}
+      style={{
+        width: "100%",
+        height: "100%",
+        maxWidth: "625px",
+        maxHeight: "945px",
+      }}
     />
     <FlexBox flexDirection="column" justifyContent="center" alignItems="center">
       {name && (

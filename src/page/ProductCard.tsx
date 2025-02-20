@@ -1,5 +1,5 @@
 import { Button, CircularProgress } from "@mui/material";
-import { FlexBox, GridBox, Image, TextManrope } from "@/components";
+import { FlexBox, GridBox, Icon, Image, TextManrope } from "@/components";
 import { ManView, ProductPageItem, TUseParams } from "@/types";
 import { useEffect, useState } from "react";
 import { useAppSelector } from "@/store";
@@ -29,13 +29,15 @@ export const ProductCard = () => {
   return (
     <GridBox
       paddingTop="4rem"
-      flexDirection="column"
+      paddingRight={isMobile ? undefined : "2rem"}
       gap="1rem"
-      gridTemplateColumns={isMobile ? "1fr" : "2fr 1fr"}
+      gridTemplateColumns={isMobile ? "1fr" : "1fr 2fr"}
     >
       <GridBox>
         {product.images.map((item, i) => (
-          <Image key={`${i}_${id}`} src={item} alt={i + "sdfssx"} />
+          <FlexBox justifyContent="center" alignItems="center">
+            <Image key={`${i}_${id}`} src={item} alt={`${i}_${id}_${item}`} />
+          </FlexBox>
         ))}
       </GridBox>
       <div>
@@ -51,15 +53,42 @@ export const ProductCard = () => {
           <TextManrope variant="body1">
             Размеры: {product.sizes.join(", ")}
           </TextManrope>
-          <GridBox gridTemplateColumns="1fr 1fr">
+          <GridBox
+            gridTemplateColumns={"1fr 1fr"}
+            gap={isMobile ? "1rem" : "3rem"}
+          >
             <GridBox>
-              <Button variant="contained" color="primary">
-                Заказать
+              <Button
+                color="inherit"
+                target="_blank"
+                href="https://web.telegram.org/k/"
+                sx={{
+                  background: "linear-gradient(120deg, #948C9B, #BEA7AB)",
+                  height: 60,
+                  color: "white",
+                  gap: "20px",
+                  borderRadius: 0,
+                }}
+              >
+                <TextManrope>Написать</TextManrope>
+                <Icon icon="telegram" />
               </Button>
             </GridBox>
             <GridBox>
-              <Button variant="outlined" color="primary">
-                Заказать
+              <Button
+                color="inherit"
+                target="_blank"
+                href="https://instagram.com"
+                sx={{
+                  background: "linear-gradient(120deg, #948C9B, #BEA7AB)",
+                  height: 60,
+                  color: "white",
+                  gap: "20px",
+                  borderRadius: 0,
+                }}
+              >
+                <TextManrope>Написать</TextManrope>
+                <Icon icon="instagram" />
               </Button>
             </GridBox>
           </GridBox>
