@@ -14,7 +14,6 @@ import CatalogCard from "@/picture/CatalogCard.png";
 import Clasic from "@/picture/Clasic.png";
 import Knitted from "@/picture/Knitted.png";
 import Sport from "@/picture/Sport.png";
-import mainPage from "@/picture/mainPage.png";
 
 export const mockCollection: TFlexBoxPartItem[] = [
   {
