@@ -61,7 +61,7 @@ export const ProductCard = () => {
               <Button
                 color="inherit"
                 target="_blank"
-                href="https://web.telegram.org/k/"
+                href="https://t.me/showroommagnete"
                 sx={{
                   background: "linear-gradient(120deg, #948C9B, #BEA7AB)",
                   height: 60,
@@ -78,7 +78,7 @@ export const ProductCard = () => {
               <Button
                 color="inherit"
                 target="_blank"
-                href="https://instagram.com"
+                href="https://www.instagram.com/magnete.spb?igsh=MWoyZ2x3ZG00dGFjeg=="
                 sx={{
                   background: "linear-gradient(120deg, #948C9B, #BEA7AB)",
                   height: 60,

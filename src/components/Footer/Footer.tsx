@@ -54,13 +54,13 @@ export const Footer = ({
               <br /> Напишите стилисту бренда ВИКТОРИИ СИТНИК
             </>
           }
-          telegramUrl="https://web.telegram.org/k/"
-          instagramUrl="https://instagram.com"
+          telegramUrl="https://t.me/Sitnivok"
+          instagramUrl="https://www.instagram.com/sitnivok"
         />
         <MessageBox
           title="Чтобы сделать заказ, напишите нам в социальных сетях!"
-          telegramUrl="https://web.telegram.org/k/"
-          instagramUrl="https://instagram.com"
+          telegramUrl="https://t.me/showroommagnete"
+          instagramUrl="https://www.instagram.com/magnete.spb?igsh=MWoyZ2x3ZG00dGFjeg=="
         />
       </GridBox>
       <FlexBox
@@ -185,14 +185,14 @@ export const Footer = ({
                 Контактные данные
               </TextManrope>
               <TextManrope
-                onClick={() => handleClick("8 (812) 123-12-12")}
+                onClick={() => handleClick("+79215551551")}
                 sx={{ cursor: "pointer" }}
                 fontSize={24}
                 fontWeight="100"
                 variant="body1"
                 marginBottom={"10px"}
               >
-                8 (812) xxx-xx-xx
+                +7 (921) xxx-xx-xx
               </TextManrope>
               <Snackbar
                 open={openSnackBar}
@@ -224,7 +224,7 @@ export const Footer = ({
                   borderRadius: "50%",
                 }}
                 target="_blank"
-                to={"https://web.telegram.org/k/"}
+                to={"https://t.me/showroommagnete"}
               >
                 <Icon icon="telegram" />
               </Link>
@@ -238,7 +238,9 @@ export const Footer = ({
                   borderRadius: "50%",
                 }}
                 target="_blank"
-                to={"https://instagram.com"}
+                to={
+                  "https://www.instagram.com/magnete.spb?igsh=MWoyZ2x3ZG00dGFjeg=="
+                }
               >
                 <Icon icon="instagram" />
               </Link>
