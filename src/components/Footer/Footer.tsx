@@ -254,7 +254,7 @@ export const Footer = ({
                   borderRadius: "50%",
                 }}
                 target="_blank"
-                to={"https://web.whatsapp.com/"}
+                to={"https://wa.me/79215551551"}
               >
                 <Icon icon="whatsUp" />
               </Link>
