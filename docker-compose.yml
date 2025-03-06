@@ -1,0 +1,44 @@
+version: '3.8'
+
+services:
+  magnete:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "5173:5173"
+#     networks:
+#       - magnete
+
+#   uptime-kuma:
+#     image: louislam/uptime-kuma:1
+#     volumes:
+#       - ./uptime-kuma/data:/app/data
+#       - /run:/run
+#     networks:
+#       - magnete
+#     restart: unless-stopped
+
+#   nginx:
+#     image: nginx:latest
+#     ports:
+#       - 80:80
+#       - 443:443
+#     volumes:
+#       - nginx-data:/etc/nginx
+#       - /etc/letsencrypt/:/etc/letsencrypt/
+#       - /var/log/nginx:/var/log/nginx
+#       - ./certbot/www:/var/www/certbot/:ro
+#       - ./certbot/conf:/etc/letsencrypt/:ro
+#     restart: always
+#     networks:
+#       - magnete
+
+#   certbot:
+#     image: certbot/certbot:latest
+#     volumes:
+#       - ./certbot/www:/var/www/certbot/:rw
+#       - ./certbot/conf:/etc/letsencrypt/:rw
+
+# networks:
+#   magnete:
