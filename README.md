@@ -15,9 +15,13 @@ To run the project locally, follow these steps:
     ```sh
     npm install
     ```
-4. Start the development server:
+4. Build project:
     ```sh
-    npm start
+    npm run build
+    ```
+5. Start the development server:
+    ```sh
+    npm run dev
     ```
 
 ### Running with Docker
