@@ -39,5 +39,5 @@ services:
       - /etc/nginx/certbot/www:/var/www/certbot/:rw
       - /etc/nginx/certbot/conf:/etc/letsencrypt/:rw
 
-# networks:
-#   magnete:
+networks:
+  magnete:
