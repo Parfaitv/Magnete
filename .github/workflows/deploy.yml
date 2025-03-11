@@ -32,16 +32,14 @@ jobs:
           cp -TR . ../build
           tar -cvf magnete.tar ../build/
 
-      - name: copy file via ssh password
+      - name: Copy files to remote server via SCP
         uses: appleboy/scp-action@master
         with:
-          host: ${{ secrets.HOST }}
-          username: ${{ secrets.USERNAME }}
-          key: ${{ secrets.KEY }}
-          port: ${{ secrets.PORT }}
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USER }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
           source: "magnete.tar"
           target: "/root/Magnete"
-
 
       - name: Execute Docker Compose via SSH
         uses: appleboy/ssh-action@master
