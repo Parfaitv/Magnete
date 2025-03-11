@@ -20,22 +20,21 @@ services:
 #     restart: unless-stopped
 
   nginx:
-    image: nginx:latest
+    image: mirror.gcr.io/nginx:latest
     ports:
       - 80:80
       - 443:443
     volumes:
-      - /etc/nginx:/etc/nginx
-      - /etc/letsencrypt/:/etc/letsencrypt/
+      - ./nginx:/etc/nginx
       - /var/log/nginx:/var/log/nginx
-      - /etc/nginx/certbot/www:/var/www/certbot/:ro
-      - /etc/nginx/certbot/conf:/etc/letsencrypt/:ro
+      - /etc/certbot/www:/var/www/certbot/:ro
+      - /etc/certbot/conf:/etc/letsencrypt/:ro
     restart: always
     networks:
       - magnete
 
   certbot:
-    image: certbot/certbot:latest
+    image: mirror.gcr.io/certbot/certbot:latest
     volumes:
       - /etc/nginx/certbot/www:/var/www/certbot/:rw
       - /etc/nginx/certbot/conf:/etc/letsencrypt/:rw
