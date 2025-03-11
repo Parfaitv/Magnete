@@ -25,6 +25,15 @@ jobs:
 
       # - name: Set up Docker Compose
       #   run: docker-compose version
+      - name: Очистить старые файлы на сервере через SSH
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USER }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          script: |
+            rm -rf ~/Magnete/*
+            mkdir -p ~/Magnete
 
       - name: Copy files to remote server via SCP
         uses: appleboy/scp-action@master
@@ -34,7 +43,6 @@ jobs:
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           source: "."
           target: "~/Magnete"
-          rm: true
 
       - name: Execute Docker Compose via SSH
         uses: appleboy/ssh-action@master
