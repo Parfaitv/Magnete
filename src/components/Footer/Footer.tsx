@@ -192,7 +192,7 @@ export const Footer = ({
                 variant="body1"
                 marginBottom={"10px"}
               >
-                +7 (921) xxx-xx-xx
+                +7 (921) 555-15-51
               </TextManrope>
               <Snackbar
                 open={openSnackBar}

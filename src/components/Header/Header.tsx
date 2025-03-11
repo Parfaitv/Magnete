@@ -32,7 +32,7 @@ export const Header = ({ menuItems }: HeaderProps) => {
   }, []);
 
   const handleClick = () => {
-    copyTextToClipboard("8-812-123-12-12");
+    copyTextToClipboard("+7 921 555 15 51");
     setOpenSnackBar(true);
   };
 
@@ -82,7 +82,7 @@ export const Header = ({ menuItems }: HeaderProps) => {
               onClick={handleClick}
               sx={{ cursor: "pointer" }}
             >
-              8 (812) xxx-xx-xx
+              +7 921 555 15 51
             </TextManrope>
             <Snackbar
               open={openSnackBar}
