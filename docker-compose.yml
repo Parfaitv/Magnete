@@ -25,11 +25,11 @@ services:
       - 80:80
       - 443:443
     volumes:
-      - nginx-data:/etc/nginx
+      - /etc/nginx:/etc/nginx
       - /etc/letsencrypt/:/etc/letsencrypt/
       - /var/log/nginx:/var/log/nginx
-      - ./certbot/www:/var/www/certbot/:ro
-      - ./certbot/conf:/etc/letsencrypt/:ro
+      - /etc/nginx/certbot/www:/var/www/certbot/:ro
+      - /etc/nginx/certbot/conf:/etc/letsencrypt/:ro
     restart: always
     networks:
       - magnete
@@ -37,8 +37,8 @@ services:
   certbot:
     image: certbot/certbot:latest
     volumes:
-      - ./certbot/www:/var/www/certbot/:rw
-      - ./certbot/conf:/etc/letsencrypt/:rw
+      - /etc/nginx/certbot/www:/var/www/certbot/:rw
+      - /etc/nginx/certbot/conf:/etc/letsencrypt/:rw
 
 # networks:
 #   magnete:
