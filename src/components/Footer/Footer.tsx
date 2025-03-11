@@ -84,7 +84,7 @@ export const Footer = ({
           >
             <FlexBox flexDirection="column">
               <TextManrope marginBottom={"20px"} fontSize={24} fontWeight="400">
-                Полезный ссылки
+                Полезные ссылки
               </TextManrope>
               <FlexBox gap="8px" flexDirection="column">
                 {usefulLinks.map((link) => (
