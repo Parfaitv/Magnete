@@ -7,8 +7,8 @@ services:
       dockerfile: Dockerfile
     ports:
       - "5173:5173"
-#     networks:
-#       - magnete
+    networks:
+      - magnete
 
 #   uptime-kuma:
 #     image: louislam/uptime-kuma:1
@@ -19,26 +19,25 @@ services:
 #       - magnete
 #     restart: unless-stopped
 
-#   nginx:
-#     image: nginx:latest
-#     ports:
-#       - 80:80
-#       - 443:443
-#     volumes:
-#       - nginx-data:/etc/nginx
-#       - /etc/letsencrypt/:/etc/letsencrypt/
-#       - /var/log/nginx:/var/log/nginx
-#       - ./certbot/www:/var/www/certbot/:ro
-#       - ./certbot/conf:/etc/letsencrypt/:ro
-#     restart: always
-#     networks:
-#       - magnete
+  nginx:
+    image: mirror.gcr.io/nginx:latest
+    ports:
+      - 80:80
+      - 443:443
+    volumes:
+      - ./nginx:/etc/nginx
+      - /var/log/nginx:/var/log/nginx
+      - /etc/certbot/www:/var/www/certbot/:ro
+      - /etc/certbot/conf:/etc/letsencrypt/:ro
+    restart: always
+    networks:
+      - magnete
 
-#   certbot:
-#     image: certbot/certbot:latest
-#     volumes:
-#       - ./certbot/www:/var/www/certbot/:rw
-#       - ./certbot/conf:/etc/letsencrypt/:rw
+  certbot:
+    image: mirror.gcr.io/certbot/certbot:latest
+    volumes:
+      - /etc/nginx/certbot/www:/var/www/certbot/:rw
+      - /etc/nginx/certbot/conf:/etc/letsencrypt/:rw
 
-# networks:
-#   magnete:
+networks:
+  magnete:
