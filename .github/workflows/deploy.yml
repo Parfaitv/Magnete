@@ -53,20 +53,20 @@ jobs:
             docker-compose build
             docker-compose up -d --remove-orphans
 
-  update-cert:
-    name: update-certificate
-    runs-on: ubuntu-latest
+  # update-cert:
+  #   name: update-certificate
+  #   runs-on: ubuntu-latest
 
-    steps:
+  #   steps:
 
-      - uses: actions/checkout@v2
+  #     - uses: actions/checkout@v2
 
-      - name: Execute Docker Compose via SSH
-        uses: appleboy/ssh-action@master
-        with:
-          host: ${{ secrets.SSH_HOST }}
-          username: ${{ secrets.SSH_USER }}
-          key: ${{ secrets.SSH_PRIVATE_KEY }}
-          script: |
-            cd ~/Magnete
-            docker-compose run --rm certbot certonly --webroot --webroot-path /var/www/certbot/ -d magnete-shop.com -d www.magnete-shop.com
+  #     - name: Execute Docker Compose via SSH
+  #       uses: appleboy/ssh-action@master
+  #       with:
+  #         host: ${{ secrets.SSH_HOST }}
+  #         username: ${{ secrets.SSH_USER }}
+  #         key: ${{ secrets.SSH_PRIVATE_KEY }}
+  #         script: |
+  #           cd ~/Magnete
+  #           docker-compose run --rm certbot certonly --webroot --webroot-path /var/www/certbot/ -d magnete-shop.com -d www.magnete-shop.com
