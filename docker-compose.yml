@@ -5,8 +5,8 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    ports:
-      - "5173:5173"
+    # ports:
+    #   - "5173:5173"
     networks:
       - magnete
 
@@ -36,8 +36,10 @@ services:
   certbot:
     image: mirror.gcr.io/certbot/certbot:latest
     volumes:
-      - /etc/nginx/certbot/www:/var/www/certbot/:rw
-      - /etc/nginx/certbot/conf:/etc/letsencrypt/:rw
+      - /etc/certbot/www:/var/www/certbot/:rw
+      - /etc/certbot/conf:/etc/letsencrypt/:rw
+    command: |
+      certonly --webroot -w /var/www/certbot --email magnete.spb@mail.ru -d magnete-shop.com -d www.magnete-shop.com --agree-tos
 
 networks:
   magnete:
